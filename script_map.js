@@ -2,7 +2,10 @@ mapboxgl.accessToken =
   "pk.eyJ1Ijoiemhhbml4IiwiYSI6ImNsc3poOWZ0djBuZ3gyam8xMjVvcW44cGIifQ.3I04wS6NG6eJfv-KNHSCWQ"
 
 navigator.geolocation.getCurrentPosition(successLocation, errorLocation, {
-  enableHighAccuracy: true
+  enableHighAccuracy: true,
+  trackUserLocation: true,
+  showUserHeading: true
+
 })
 
 function successLocation(position) {
@@ -13,10 +16,11 @@ function errorLocation() {
   setupMap([-2.24, 53.48])
 }
 
+
 function setupMap(center) {
   const map = new mapboxgl.Map({
     container: "map",
-    style: "mapbox://styles/mapbox/satellite-streets-v12",
+    style: "mapbox://styles/mapbox/outdoors-v12",
     center: center,
     zoom: 15
   })
@@ -28,5 +32,4 @@ function setupMap(center) {
     accessToken: mapboxgl.accessToken
   })
 
-  map.addControl(directions, "top-left")
 }
