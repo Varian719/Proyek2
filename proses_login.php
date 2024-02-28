@@ -1,7 +1,10 @@
 <?php
 include_once("config.php");
 
-$query = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username' AND password ='$password'");
+$username = $_POST['username'];
+$password = $_POST['password'];
+
+$query = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username' AND password = '$password'");
 
 if(mysqli_num_rows($query)==0){
     ?>

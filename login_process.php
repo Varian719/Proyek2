@@ -9,7 +9,7 @@ if (isset($_POST['Username']) && isset($_POST['Password'])):
     // Hash the password using PHP's password_hash function
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    $query = "SELECT * FROM user WHERE username = ? AND password = ?";
+    $query = "SELECT * FROM user WHERE username = $username AND password = $password";
     $stmt = $conn->prepare($query);
     $stmt->bind_param('ss', $username, $hashed_password);
     $stmt->execute();
