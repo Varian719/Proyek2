@@ -1,10 +1,5 @@
 <?php
-$conn=mysqli_connect("localhost","root","","spin_a_meal");
-if(!$conn)
-{
-	echo"Koneksi gagal";
-}
-
+include_once("config.php");
 ?>
 <html lang="en">
 <head>

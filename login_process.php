@@ -1,11 +1,6 @@
 <?php
 session_start();
-
-// Assuming you have a database connection function called 'connect_db'
-$conn = mysqli_connect("localhost", "root", "", "spin_a_meal");
-if (!$conn) {
-    echo "Koneksi gagal";
-}
+include_once("config.php");
 
 if (isset($_POST['Username']) && isset($_POST['Password'])):
     $username = $_POST['Username'];

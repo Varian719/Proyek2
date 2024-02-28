@@ -1,13 +1,5 @@
 <?php
-
-$username = $_POST['username'];
-$password = $_POST['password'];
-$conn=mysqli_connect("localhost","root","","spin_a_meal");
-if(!$conn)
-{
-    echo"Koneksi gagal";
-}
-
+include_once("config.php");
 
 $query = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username' AND password ='$password'");
 
