@@ -6,12 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
   <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
-  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
-  <link
-    rel="stylesheet"
-    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
-    type="text/css"
-  />
+  <link rel="stylesheet" href="styles.css" />
   <title>Google Maps Clone</title>
   <style>
     body {
@@ -22,10 +17,35 @@
       height: 100vh;
       width: 100vw;
     }
+
+    .navbar {
+      background-color: #333;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .navbar a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
   </style>
   <script src="script_map.js" defer></script>
 </head>
 <body>
+  <div class="navbar">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </div>
   <div id='map'></div>
 </body>
 </html>
