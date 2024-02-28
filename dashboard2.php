@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="styles.css" />
   <title>Google Maps Clone</title>
   <style>
+    a{
+      font-size: 24px;
+    }
     body {
       margin: 0;
     }
@@ -19,7 +22,7 @@
     }
 
     .navbar {
-      background-color: #333;
+      background-color: #02257d;
       overflow: hidden;
       position: relative;
     }
@@ -37,6 +40,10 @@
       background-color: #ddd;
       color: black;
     }
+    h2{
+      color:#ff6e42;
+      padding-left:850px;
+    }
   </style>
   <script src="script_map.js" defer></script>
 </head>
@@ -45,6 +52,7 @@
     <a href="#">Home</a>
     <a href="#">About</a>
     <a href="#">Contact</a>
+    <h2>Spin A Meal</h2>
   </div>
   <div id='map'></div>
 </body>
