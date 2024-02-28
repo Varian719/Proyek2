@@ -1,5 +1,7 @@
 <?php
-include_once("config.php");
+include_once ("config.php");
+$username = $_POST['username'];
+$password = $_POST['password'];
 $query_validasi = "SELECT*FROM user where username = '$username'";
 $query = mysqli_query($conn, $query_validasi);
 
