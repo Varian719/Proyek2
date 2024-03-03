@@ -19,6 +19,9 @@
 <body>
 <header class="header" id="header">
         <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i></div>
+        <div class="navbar-header">
+        <a class="navbar-brand" href="#">Spin A Meal</a>
+        </div>
         <div class="header_img"> <img src="images/profile_icon.png" alt=""> </div>
     </header>
     <div class="l-navbar" id="nav-bar">

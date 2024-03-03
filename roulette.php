@@ -55,6 +55,19 @@
       border-radius: 1em;
       box-shadow: 0 4em 5em rgba(27, 8, 53, 0.2);
     }
+    .wrapper2 {
+      width:40%;
+      max-width: 34.37em;
+      max-height: 90vh;
+      background-color: #ffffff;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 75%;
+      padding: 3em;
+      border-radius: 1em;
+      box-shadow: 0 4em 5em rgba(27, 8, 53, 0.2);
+    }
     .container {
       position: relative;
       width: 100%;
@@ -139,6 +152,65 @@
       <!-- Elemen HTML untuk pop-up -->
       <div id="popup">
             <button onclick="closePopup()">Tutup</button>
+        </div>
+    </div>
+
+    <div class="wrapper2">
+      <div class="container">
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Restaurants Name</th>
+      <th scope="col">From user</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>BFC Chicken</td>
+      <td>800m</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+  </div>
+<script>
+  // Initialize map
+  mapboxgl.accessToken = 'YOUR_MAPBOX_ACCESS_TOKEN';
+  const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [-77.0323, 38.9131],
+    zoom: 12
+  });
+
+  // Fetch nearby restaurants from Mapbox API
+  fetch('https://api.mapbox.com/datasets/v1/mapbox/restaurant-locations?access_token=YOUR_MAPBOX_ACCESS_TOKEN')
+    .then(response => response.json())
+    .then(data => {
+      // Add markers to the map
+      data.features.forEach(feature => {
+        const marker = new mapboxgl.Marker()
+          .setLngLat(feature.geometry.coordinates)
+          .addTo(map);
+      });
+
+      // Add table rows
+      const table = document.getElementById('table');
+      data.features.forEach(feature => {
+        const row = document.createElement('tr');
+        const nameCell = document.createElement('td');
+        nameCell.textContent = feature.properties.name;
+        const addressCell = document.createElement('td');
+        addressCell.textContent = feature.properties.address;
+        row.appendChild(nameCell);
+        row.appendChild(addressCell);
+        table.appendChild(row);
+      });
+    })
+    .catch(error => console.log(error));
+</script>
         </div>
     </div>
     <!-- Chart JS -->
