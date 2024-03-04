@@ -29,9 +29,9 @@
 				<div class="login100-pic js-tilt" data-tilt>
 					<img src="images/img-01.png" alt="IMG">
 				</div>
-				<form  action="proses_login.php" class="login100-form validate-form" method="POST">
+				<form  action="proses_admin.php" class="login100-form validate-form" method="POST">
 					<span class="login100-form-title">
-						Spin a Meal
+						ADMINISTRATOR
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
@@ -55,11 +55,8 @@
 							Login
 						</button>
 					</div>
-					<div class="container-login100-form-btn">
-						<button class="login100-form-btn" href="dashboard.php">
-							Login as Guest
-						</button>
-					</div>
+		
+
 					<div class="text-center p-t-12">
 						<span class="txt1">
 							Forgot
@@ -67,10 +64,7 @@
 						<a class="txt2" href="#">
 							Username / Password?
 						</a>
-						<a class="txt2" href="admin.php">
-							Administrator
-							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-						</a>
+                        
 					</div>
 					
 				
@@ -79,6 +73,9 @@
 							Create your Account
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
+					</div>
+                    <div class="text-center p-t-136">
+						
 					</div>
 				</form>
 			</div>
