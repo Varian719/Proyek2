@@ -1,9 +1,7 @@
 <?php
 include 'config.php';
 
-// Check if userid is provided
-
-$id = $_GET['userid']; // Convert userid to integer to prevent SQL injection
+$id = $_GET['userid']; 
 
 
 $sql = "DELETE FROM user WHERE userid='$id'";
