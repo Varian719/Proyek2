@@ -246,7 +246,6 @@
                 <table id="example2" class="table table-bordered table-hover">
                   <thead>
                   <tr>
-                    <th>ID</th>
                     <th>Username</th>
                     <th>Password</th>
                     <th>Aksi</th>
@@ -257,7 +256,6 @@
                   $query=mysqli_query($conn,$sql);
                   while ($row = mysqli_fetch_assoc($query)) {
                     echo "<tr>
-                    <td>" . $row['userid'] . "</td>
                     <td>" . $row['username'] . "</td>
                     <td>" . $row['password'] . "</td>
                     <td>
