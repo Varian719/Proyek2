@@ -43,10 +43,7 @@
   background-color: #f5f5f5;
 }
 
-.navbar-custom {
-    background-color: #3904d9;
 
-}
 
  </style>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" type="text/css">
@@ -62,7 +59,7 @@
         </div>
         <div class="header_img"> <img src="images/profile_icon.png" alt=""> </div>
     </header>
-    <div class="l-navbar navbar-custom" id="nav-bar">
+    <div class="l-navbar" id="nav-bar" style="background-color: #6414e9">
         <nav class="nav">
             <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">BBBootstrap</span> </a>
                 <div class="nav_list">

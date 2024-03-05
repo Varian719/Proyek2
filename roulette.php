@@ -125,7 +125,7 @@
     </style>
   </head>
   <body>
-    <div class="l-navbar" id="nav-bar">
+    <div class="l-navbar" id="nav-bar" style="background-color: #6414e9">
         <nav class="nav">
             <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">BBBootstrap</span> </a>
                 <div class="nav_list">

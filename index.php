@@ -1,109 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<title>Login V1</title>
-	<meta charset="UTF-8">
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-<!--===============================================================================================-->
+	<title>Layout</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<style type="text/css">
+		.navbar-custom{
+			background: linear-gradient(135deg, #c3a3f1, #6414e9);
+		}
+
+		[id^="gabung"]{
+			border: none;
+			box-shadow: 1px black;
+			
+		}
+		h2,h3,h4{
+			color: white;
+		}
+		.row{
+			margin-top: 0.2em;
+		}
+		[class^="col"]{
+			background: linear-gradient(to bottom, #cc00cc 0%, #6666ff 100%);
+			border: 1px solid rgba(86, 61, 124, 0.2);
+			padding: 0.4em;
+
+		}
+		[id^="navigasi"]{
+			background-image: url(imagg/.jpg);
+			border: 1px solid rgba(86, 61, 124, 0.2);
+			padding: 0.4em;
+		}
+		[id^="footer"]{
+			background-image: url(img/bg-footnote.jpg);
+		}
+		[id^="gambar"]{
+			border: solid 5px whitesmoke;
+			box-shadow: 3px;
+
+		}
+	</style>
 </head>
 <body>
-	
-	<div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100">
-				<div class="login100-pic js-tilt" data-tilt>
-					<img src="images/img-01.png" alt="IMG">
-				</div>
-				<form  action="proses_login.php" class="login100-form validate-form" method="POST">
-					<span class="login100-form-title">
-						Spin a Meal
-					</span>
+	<div class="container-fluid">
+		<div class="row" id="navigasi">
+			<div class="col-12 col-sm-12 col-md-6 border-0" id="navigasi">
+				 <a href="#" class="navbar-brand"><img src="img/logo.png" class="navbar-brand"></a>
+			</div>
+			<div class="col-12 col-sm-12 col-md-6 border-0" id="navigasi">
+			<nav class="navbar navbar-expand-xl navbar navbar-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="login.php" class="nav-link">Login</a>
+                    </li>
+                </ul>
+            </div>
+          </nav>
+			</div>
+		</div>
 
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="username" placeholder="username">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-envelope" aria-hidden="true"></i>
-						</span>
-					</div>
-
-					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="text" name="password" placeholder="Password">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-lock" aria-hidden="true"></i>
-						</span>
-					</div>
-					
-					<div class="container-login100-form-btn">
-						<button  type="submit" class="login100-form-btn" value="submit">
-							Login
-						</button>
-					</div>
-					<div class="container-login100-form-btn">
-						<button class="login100-form-btn" href="dashboard.php">
-							Login as Guest
-						</button>
-					</div>
-					<div class="text-center p-t-12">
-						<span class="txt1">
-							Forgot
-						</span>
-						<a class="txt2" href="#">
-							Username / Password?
-						</a>
-						<a class="txt2" href="admin.php">
-							Administrator
-							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-						</a>
-					</div>
-					
-				
-					<div class="text-center p-t-136">
-						<a class="txt2" href="sign_up.php">
-							Create your Account
-							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-						</a>
-					</div>
-				</form>
+		<div class="row">
+			<div class="col-12 border-0">
+		<div class="row no-gutters" id="gabung">
+			<div class="col-12 col-sm-12 col-md-5 justify-content-center mt-5 mb-5 border-0" id="gabung">
+				<h1>SPIN A MEAL</h1>
+			</div>
+			<div class="col-12 col-sm-12 col-md-7 justify-content-center border-0" id="gabung">
+			<img src="images\undraw_eating_together_re_ux62.svg" class="img-fluid">
 			</div>
 		</div>
 	</div>
-	
-	
+		
+	</div>
+		<div class="row">
+			<div class="col-12 border-0">
+			<div class="row no-gutters">
+			<div class="col-12 col-sm-12 col-md-8 border-top-0 border-bottom-0 border-left-0"><H2>The Manes Winchester Promise</H2><br><p>This website template has been designed by Free Website Templates for you, for free. You can replace all this text with your own text. You can remove any link to our website from this website template, you're free to use this website template without linking back to us. If you're having problems editing this website template, then don't hesitate to ask for help on the Forums</p>
+			</div>
+			<div class="col-12 col-sm-12 col-md-4 border-top-0 border-bottom-0 border-right-0"><H2>Testimonials</H2><br><p>"Aenean ullamcorper purus vitae nisl tristique sollicitudin. Quisque vestibulum, erat omare." </p><br><h5 align="right">~Saddam Hussein</h5></div>
+		</div>
+	</div>
+</div>
+		<div class="row">
+			<div class="col-12"><H3> Why Choose US?</H3>
+		<div class="row no-gutters">
+		<div class="col-12  col-md-3 justify-content-center border-0"><img src="img/meeting.jpg" class="img-fluid mt-3 ml-5" id="gambar"><br>
+			<h4 class="ml-5">Our Lawyer</h4><br>
+			<p class="ml-5">Our website templates are created with quality and experience</p><br>
+			<button type="submit" value="read" class="btn btn-dark ml-5 mb-1">Read More</button>
+			</div>
+		<div class="col-12 col-sm-12 col-md-3 justify-content-center border-0"><img src="img/handshake.jpg" class="img-fluid mt-3 ml-5" id="gambar"><br>
+			<h4 class="ml-5">Get To Know Us More</h4><br>
+			<p class="ml-5">Our website templates are created with quality and experience</p><br>
+			<button type="submit" value="read" class="btn btn-dark ml-5 mb-1">Read More</button>
+		</div>
+		<div class="col-12 col-sm-12 col-md-3 justify-content-center border-0"><img src="img/smile.jpg" class="img-fluid mt-3 ml-5" id="gambar"><br>
+			<h4 class="ml-5">What we offer</h4><br>
+			<p class="ml-5">Our website templates are created with quality and experience</p><br>
+			<button type="submit" value="read" class="btn btn-dark ml-5 mb-1">Read More</button>
+		</div>
+		<div class="col-12 col-sm-12 col-md-3 justify-content-center border-0"><img src="img/family-small.jpg" class="img-fluid mt-3 ml-5" id="gambar"><br>
+			<h4 class="ml-5">Get In Touch With Us</h4><br>
+			<p class="ml-5">Our website templates are created with quality and experience</p><br>
+			<button type="submit" value="read" class="btn btn-dark ml-5 mb-1">Read More</button>
+		</div>
+		</div>
+	</div>
+	</div>
 
-	
-<!--===============================================================================================-->	
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/tilt/tilt.jquery.min.js"></script>
-	<script >
-		$('.js-tilt').tilt({
-			scale: 1.1
-		})
-	</script>
-<!--===============================================================================================-->
-	<script src="js/main.js"></script>
+		<div class="row border-0">
+			<div class="col-12 ">
+		<div class="row no-gutters">
+			<div class="col-12 col-sm-12 col-md-4 border-top-0 border-bottom-0 border-left-0"><H4 class="ml-3">Latest News</H4><br><p class="ml-3">This website Template has been designed by Free Website Template  for you.</p>
+			</div>
+			<div class="col-12 col-sm-12 col-md-4 border-top-0 border-bottom-0 border-left-0"><H4 class="ml-3">Contact Us</H4><p class="ml-3">City State:21e1212<br>
+			Addresss:  <br>   
+			Email:       </p></div>
+			<div class="col-12 col-sm-12 col-md-4 border-top-0 border-bottom-0 border-right-0"><H4 class="ml-3">Send Us A Message</H4><br>
+			<button type="submit" value="Send_email" class="btn btn-dark ml-5">Click To Send Us An Email</button></div>
+			
+		</div>
+	</div>
+</div>
+	<div class="row" id="footer">
+		<div class="col-5 col-sm-5 col-md-5 border-0" width="col-auto" height="50" id="footer">
+			<img src="img/instagram.png"  height="20"><img src="img/facebook.png"  height="20">
+		</div>
+		<div class="col-7 col-sm-7 col-md-7 border-0" width="col-auto" height="50" id="footer">
+			<h5 align="right" class="text-light">copyright</h5> 
+		</div>
+	</div>
+	</div>
 
+
+	<script src="js/jquery-3.4.1.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
