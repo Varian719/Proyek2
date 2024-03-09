@@ -1,9 +1,6 @@
 <?php
 include 'config.php';
-$id_rm = $_GET['id_rm'];
-$query = "SELECT * FROM rumahmakan WHERE id_rm = '$id_rm'";
-$result = mysqli_query($conn, $query);
-$brs= mysqli_fetch_array($result);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -224,12 +221,12 @@ $brs= mysqli_fetch_array($result);
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Edit Data User</h1>
+            <h1>Edit</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Edit Data User</li>
+              <li class="breadcrumb-item active">ADD Data RM</li>
             </ol>
           </div>
         </div>
@@ -281,7 +278,7 @@ $brs= mysqli_fetch_array($result);
                 $lokasi_rm = $_POST['lokasi_rm'];
                 $no_telp = $_POST['no_telp'];
                 
-                $qry="UPDATE rumahmakan SET nama_rumahmakan= '$nama_rumahmakan',Alamat='$Alamat',lokasi_rm='$lokasi_rm',no_telp='$no_telp' WHERE id_rm=$id_rm";
+                $qry="INSERT INTO rumahmakan (nama_rumahmakan,Alamat,lokasi_rm,no_telp) value('$nama_rumahmakan','$Alamat','$lokasi_rm','$no_telp')";
                 $hasil = mysqli_query($conn,$qry);
                 if($hasil){
                   echo "<script language='JavaScript'>

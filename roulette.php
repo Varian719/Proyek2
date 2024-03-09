@@ -1,3 +1,6 @@
+<?php
+include 'config.php';
+?>
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -162,15 +165,21 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Restaurants Name</th>
-      <th scope="col">From user</th>
+      <th scope="col">Location</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>BFC Chicken</td>
-      <td>800m</td>
-    </tr>
+  <?php
+                  $sql="SELECT * FROM rumahmakan";
+                  $query=mysqli_query($conn,$sql);
+                  while ($row = mysqli_fetch_assoc($query)) {
+                    echo "<tr>
+                    <td>" . $row['id_rm'] . "</td>
+                    <td>" . $row['nama_rumahmakan'] . "</td>
+                    <td>" . $row['Alamat'] . "</td>
+                  </tr>";
+                }
+                ?>
   </tbody>
 </table>
   </div>
