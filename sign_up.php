@@ -4,7 +4,7 @@ include_once("config.php");
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V1</title>
+	<title>Regist</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -34,7 +34,7 @@ include_once("config.php");
 				</div>
 				<form  action="proses_register.php"class="login100-form validate-form"  method="POST">
 					<span class="login100-form-title">
-						Spin a Wheel
+					<img src="images/spin_a_meal.png" height="200px">
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">

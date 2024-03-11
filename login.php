@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V1</title>
+	<title>Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -31,7 +31,7 @@
 				</div>
 				<form  action="proses_login.php" class="login100-form validate-form" method="POST">
 					<span class="login100-form-title">
-						Spin a Meal
+					<img src="images/spin_a_meal.png" height="200px">
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
