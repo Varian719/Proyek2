@@ -8,7 +8,7 @@ if (isset($_GET['id'])) {
     
 
     // Use separate DELETE statements for each table with proper WHERE clause conditions
-    $sql1 = "DELETE FROM user WHERE userid = '$id'";
+    $sql1 = "DELETE FROM menu WHERE Id_Menu = '$id'";
 
     // Execute each query separately
     $query1 = mysqli_query($conn, $sql1);
@@ -18,12 +18,12 @@ if (isset($_GET['id'])) {
         echo "<script language='JavaScript'>
                 window.alert('Data User sudah dihapus');
              // Redirect to a relevant page after deletion
-             location.href='data.php'
+             location.href='data_rm.php'
               </script>";
     } else {
         echo "<script language='JavaScript'>
                 window.alert('Data User tidak dapat dihapus');
-                location.href='data.php'
+                location.href='data_rm.php'
               </script>";
     }
     

@@ -3,7 +3,7 @@ include 'config.php';
 if (isset($_GET['id'])) {
   $id = $_GET['id'];
 }
-$query = "SELECT * FROM rumahmakan WHERE id_rm = '$id'";
+$query = "SELECT * FROM menu WHERE Id_Menu = '$id'";
 $result = mysqli_query($conn, $query);
 $brs= mysqli_fetch_array($result);
 ?>
@@ -12,7 +12,7 @@ $brs= mysqli_fetch_array($result);
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Admin</title>
+  <title>Spin_a_meal</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -170,7 +170,7 @@ $brs= mysqli_fetch_array($result);
     <!-- Brand Logo -->
     <a href="../../index3.html" class="brand-link">
       <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <span class="brand-text font-weight-light">Spin A Meal</span>
     </a>
 
     <!-- Sidebar -->
@@ -181,7 +181,7 @@ $brs= mysqli_fetch_array($result);
           <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">Admin</a>
         </div>
       </div>
 
@@ -226,12 +226,12 @@ $brs= mysqli_fetch_array($result);
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Edit Data User</h1>
+            <h1>Edit Data Menu</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Edit Data User</li>
+              <li class="breadcrumb-item active">Edit Data Menu</li>
             </ol>
           </div>
         </div>
@@ -255,20 +255,18 @@ $brs= mysqli_fetch_array($result);
               <form method="POST">
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Nama Rumah Makan</label>
-                    <input type="text" value="<?=$brs[1]; ?>" class="form-control" name="nama_rumahmakan" placeholder="Rumah Makan">
+                    <label for="exampleInputEmail1">Menu</label>
+                    <input type="text" value="<?=$brs[1]; ?>" class="form-control" name="menu" placeholder="Menu">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Alamat</label>
-                    <input type="text" value="<?=$brs[2]; ?>" class="form-control" name="Alamat" placeholder="Alamat">
+                    <label for="exampleInputPassword1">Harga</label>
+                    <input type="text" value="<?=$brs[2]; ?>" class="form-control" name="Harga" placeholder="Harga">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Lokasi</label>
-                    <input type="text" value="<?=$brs[3]; ?>" class="form-control" name="lokasi_rm" placeholder="Lokasi">
+                    <label for="exampleInputPassword1">id_rm</label>
+                    <input type="text" value="<?=$brs[3]; ?>" class="form-control" name="id_rm" placeholder="id_rm">
                   </div>
-                  <label for="exampleInputPassword1">No Telepon</label>
-                    <input type="text" value="<?=$brs[4]; ?>"  class="form-control" name="no_telp" placeholder="Nomor Telepon">
-                  </div>
+                  
                 </div>
                 <!-- /.card-body -->
 
@@ -278,12 +276,12 @@ $brs= mysqli_fetch_array($result);
               </form>
               <?php 
               if(isset($_POST['save'])){
-                $nama_rumahmakan= $_POST['nama_rumahmakan'];
-                $Alamat = $_POST['Alamat'];
-                $lokasi_rm = $_POST['lokasi_rm'];
-                $no_telp = $_POST['no_telp'];
+                $Menu= $_POST['menu'];
+                $Harga= $_POST['Harga'];
+                $id_rm = $_POST['id_rm'];
                 
-                $qry="UPDATE rumahmakan SET nama_rumahmakan= '$nama_rumahmakan',Alamat='$Alamat',lokasi_rm='$lokasi_rm',no_telp='$no_telp' WHERE id_rm=$id";
+                
+                $qry="UPDATE menu SET Menu= '$Menu',Harga='$Harga',id_rm='$id_rm WHERE Id_Menu=$id";
                 $hasil = mysqli_query($conn,$qry);
                 if($hasil){
                   echo "<script language='JavaScript'>
@@ -293,7 +291,8 @@ $brs= mysqli_fetch_array($result);
                 
                 }else{
                   echo "<script language='JavaScript'>
-                  
+                  (window.alert('Data Rumah Makan tidak dapat di Update'))
+                  location.href='data_menu.php'
                   </script>";
                 }
               }

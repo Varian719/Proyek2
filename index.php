@@ -30,7 +30,7 @@
 		[id^="navigasi"]{
 			background-image: url(imagg/.jpg);
 			border: 1px solid rgba(86, 61, 124, 0.2);
-			padding: 0.4em;
+			padding: 0.3em;
 		}
 		[id^="footer"]{
 			background-image: url(img/bg-footnote.jpg);
@@ -52,7 +52,7 @@
 				 <a href="#" class="navbar-brand"><img src="images/spin_a_meal.png" class="navbar-brand img-custom">Spin A Meal</a>
 			</div>
 			<div class="col-12 col-sm-12 col-md-6 border-0" id="navigasi">
-			<nav class="navbar navbar-expand-xl navbar navbar-light">
+			<nav class="navbar navbar-expand-xl navbar navbar-light ">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>

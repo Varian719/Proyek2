@@ -1,18 +1,13 @@
 <?php
 include 'config.php';
-if (isset($_GET['id'])) {
-  $id = $_GET['id'];
-}
-$query = "SELECT * FROM rumahmakan WHERE id_rm = '$id'";
-$result = mysqli_query($conn, $query);
-$brs= mysqli_fetch_array($result);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Admin</title>
+  <title>Spin A Meal</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -226,12 +221,12 @@ $brs= mysqli_fetch_array($result);
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Edit Data User</h1>
+            <h1>Edit</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Edit Data User</li>
+              <li class="breadcrumb-item active">Data Menu</li>
             </ol>
           </div>
         </div>
@@ -255,19 +250,15 @@ $brs= mysqli_fetch_array($result);
               <form method="POST">
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Nama Rumah Makan</label>
-                    <input type="text" value="<?=$brs[1]; ?>" class="form-control" name="nama_rumahmakan" placeholder="Rumah Makan">
+                    <label for="exampleInputPassword1">Menu</label>
+                    <input type="text" class="form-control" name="Menu" placeholder="Menu">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Alamat</label>
-                    <input type="text" value="<?=$brs[2]; ?>" class="form-control" name="Alamat" placeholder="Alamat">
+                    <label for="exampleInputPassword1">Harga</label>
+                    <input type="text" class="form-control" name="Harga" placeholder="Harga">
                   </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Lokasi</label>
-                    <input type="text" value="<?=$brs[3]; ?>" class="form-control" name="lokasi_rm" placeholder="Lokasi">
-                  </div>
-                  <label for="exampleInputPassword1">No Telepon</label>
-                    <input type="text" value="<?=$brs[4]; ?>"  class="form-control" name="no_telp" placeholder="Nomor Telepon">
+                  <label for="exampleInputPassword1">id_rm</label>
+                    <input type="text" class="form-control" name="id_rm" placeholder="id_rm">
                   </div>
                 </div>
                 <!-- /.card-body -->
@@ -278,21 +269,22 @@ $brs= mysqli_fetch_array($result);
               </form>
               <?php 
               if(isset($_POST['save'])){
-                $nama_rumahmakan= $_POST['nama_rumahmakan'];
-                $Alamat = $_POST['Alamat'];
-                $lokasi_rm = $_POST['lokasi_rm'];
-                $no_telp = $_POST['no_telp'];
+               
+                $Menu = $_POST['Menu'];
+                $Harga = $_POST['Harga'];
+                $id_rm = $_POST['id_rm'];
                 
-                $qry="UPDATE rumahmakan SET nama_rumahmakan= '$nama_rumahmakan',Alamat='$Alamat',lokasi_rm='$lokasi_rm',no_telp='$no_telp' WHERE id_rm=$id";
+                $qry="INSERT INTO menu (Menu,Harga,id_rm) value('$Menu','$Harga','$id_rm')";
                 $hasil = mysqli_query($conn,$qry);
                 if($hasil){
                   echo "<script language='JavaScript'>
                   (window.alert('Data Rumah Makan sudah di Update'))
-                  location.href='data_rm.php'
+                  location.href='data_menu.php'
                   </script>";
                 
                 }else{
                   echo "<script language='JavaScript'>
+                  (window.alert('Data Rumah Makan tidak dapat di Update'))
                   
                   </script>";
                 }

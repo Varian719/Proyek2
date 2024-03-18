@@ -1,5 +1,6 @@
 <?php
 include 'config.php';
+error_reporting(0);
 ?>
 <html lang="en">
   <head>
@@ -125,6 +126,8 @@ include 'config.php';
         right: -5%;
       }
     }
+    /* Popup container */
+
     </style>
   </head>
   <body>
@@ -166,6 +169,7 @@ include 'config.php';
       <th scope="col">#</th>
       <th scope="col">Restaurants Name</th>
       <th scope="col">Location</th>
+      <th scope="col">!</th>
     </tr>
   </thead>
   <tbody>
@@ -177,6 +181,62 @@ include 'config.php';
                     <td>" . $row['id_rm'] . "</td>
                     <td>" . $row['nama_rumahmakan'] . "</td>
                     <td>" . $row['Alamat'] . "</td>
+                    <td><button id='popup-btn'>Show Menu</button>
+                    <div id='popup' class='hidden'>
+                      <table id='table-data'></table>
+                    </div>
+                    <script type='javascript'>
+                    const sql = require('mssql');
+
+                    const config = {
+                      server: 'localhost', //server name or IP address
+                      database: 'spin_a_meal',
+                      user: 'root',
+                      password: '',
+                      options: {
+                        encrypt: true // use this if you're on Windows Azure
+                      }
+                    };
+                    
+                    sql.connect(config, (err) => {
+                      if (err) {
+                        console.error(err);
+                        return;
+                      }
+                    
+                      console.log('Connected to the database!');
+                    
+                      const popupBtn = document.getElementById('popup-btn');
+                      const popup = document.getElementById('popup');
+                      const tableData = document.getElementById('table-data');
+                    
+                      popupBtn.addEventListener('click', () => {
+                        // Define the SQL query to fetch the table data
+                        const query = 'SELECT * FROM menu';
+                    
+                        // Execute the query and get the result
+                        new sql.Request().query(query, (err, result) => {
+                          if (err) {
+                            console.error(err);
+                            return;
+                          }
+                    
+                          // Display the table data
+                          let html = '<table>';
+                          for (let row of result.recordset) {
+                            html += '<tr>';
+                            for (let cell of row) {
+                              html += `<td>${cell}</td>`;
+                            }
+                            html += '</tr>';
+                          }
+                          html += '</table>';
+                          tableData.innerHTML = html;
+                          popup.style.display = 'block';
+                        });
+                      });
+                    });
+                    </script>
                   </tr>";
                 }
                 ?>
