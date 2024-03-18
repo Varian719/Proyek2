@@ -32,17 +32,22 @@ if(!$conn)
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+  <style>
+    .sidebar-custom{
+      background: #3727b0;
+    }
+  </style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+    <img class="animation__shake" src="dist/img/spin_a_meal.png" alt="AdminLTELogo" height="60" width="60">
   </div>
 
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light ">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
@@ -115,7 +120,7 @@ if(!$conn)
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <aside class="main-sidebar sidebar-dark-primary elevation-4 sidebar-custom">
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
@@ -124,7 +129,7 @@ if(!$conn)
           <img src="dist/img/avatar.png" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-        <a href="#" class="d-block">USER</a>
+        <a href="#" class="d-block mr-10">Admin</a>
         </div>
       </div>
 

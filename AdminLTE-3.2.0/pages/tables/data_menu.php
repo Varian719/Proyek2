@@ -18,6 +18,11 @@
   <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <style>
+    .sidebar-custom{
+      background: #3727b0;
+    }
+  </style>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -160,10 +165,10 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <aside class="main-sidebar sidebar-dark-primary elevation-4 sidebar-custom">
     <!-- Brand Logo -->
     <a href="../../index3.html" class="brand-link">
-      <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="../../dist/img/spin_a_meal.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Spin A Meal</span>
     </a>
 
@@ -249,6 +254,7 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
+                <a href="add_menu.php">Add Menu</a>
                 <table id="example2" class="table table-bordered">
                   <thead>
                   <tr>
@@ -325,7 +331,6 @@
 <!-- AdminLTE App -->
 <script src="../../dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="../../dist/js/demo.js"></script>
 <!-- Page specific script -->
 <script>
   $(function () {
