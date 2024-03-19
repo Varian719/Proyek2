@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script src='https://api.mapbox.com/mapbox-search-js/v1.12.0/mapbox-search.js'></script>
+  
   <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
   <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
   <link rel="stylesheet" href="styles.css" />
@@ -43,8 +43,12 @@
   background-color: #f5f5f5;
 }
 
-.navbar-custom {
+.sidebar-custom {
     background-color: #3904d9;
+
+}
+.navbar-custom {
+    margin-left: 0px;
 
 }
 
@@ -58,11 +62,12 @@
 <header class="header" id="header">
         <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i></div>
         <div class="navbar-header">
-        <a class="navbar-brand" href="#">Spin A Meal</a>
+        <a class="navbar-brand ml-0" href="#">Spin A Meal</a>
+      
         </div>
-        <div class="header_img"> <img src="images/spin_a_meal.png" alt=""> </div>
+        <div class="header_img align-left"> <img src="images/spin_a_meal.png" alt=""> </div>
     </header>
-    <div class="l-navbar navbar-custom" id="nav-bar">
+    <div class="l-navbar sidebar-custom" id="nav-bar">
         <nav class="nav">
             <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">BBBootstrap</span> </a>
                 <div class="nav_list">
@@ -79,8 +84,10 @@
     <!--Container Main start-->
     <div class="height-100 bg-light" id='map'>
     </div>
-    <div id="geocoder"></div>
-    <div id="restaurant-results"></div>
+    <mapbox-search access-token="pk.eyJ1Ijoiemhhbml4IiwiYSI6ImNsc3poOWZ0djBuZ3gyam8xMjVvcW44cGIifQ.3I04wS6NG6eJfv-KNHSCWQ"
+    proximity="0,0"
+    ></mapbox-search>
+    
     <!--Container Main end-->
 
     <script src="js/dashboard.js"></script>

@@ -19,7 +19,10 @@ function setupMap(center) {
     center: center,
     zoom: 15,
     geolocate: true
+  
   });
+
+
 
   // Add geolocate control to the map.
   map.addControl(
@@ -30,16 +33,12 @@ function setupMap(center) {
       trackUserLocation: true,
       showUserHeading: true
     })
+    
+    
   );
+  
   // Add search control to the map.
-  const searchbox = new MapboxSearch({
-    accessToken: mapboxgl.accessToken,
-    input: 'searchbox',
-    placeholder: 'Search for restaurants',
-    country: 'us', // Specify your country code if needed
-    limit: 5 // Limit the number of search results
-  });
-
+  
   // Add the search control to the map
-  map.addControl(searchbox);
+  
 }

@@ -278,9 +278,9 @@ include 'config.php';
               </form>
               <?php 
               if(isset($_POST['save'])){
-                $nama_rumahmakan= $_POST['nama_rumahmakan'];
-                $Alamat = $_POST['Alamat'];
-                $lokasi_rm = $_POST['lokasi_rm'];
+                $nama_rumahmakan= addslashes($_POST['nama_rumahmakan']);
+                $Alamat = addslashes($_POST['Alamat']);
+                $lokasi_rm = addslashes($_POST['lokasi_rm']);
                 $no_telp = $_POST['no_telp'];
                 
                 $qry="INSERT INTO rumahmakan (nama_rumahmakan,Alamat,lokasi_rm,no_telp) value('$nama_rumahmakan','$Alamat','$lokasi_rm','$no_telp')";
