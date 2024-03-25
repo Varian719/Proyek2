@@ -5,40 +5,40 @@ navigator.geolocation.getCurrentPosition(successLocation, errorLocation, {
 });
 
 function successLocation(position) {
-  setupMap([position.coords.longitude, position.coords.latitude]);
+  var lng = position.coords.longitude;
+  var lat = position.coords.latitude;
+
+  var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [lng, lat],
+      zoom: 12
+  });
+
+  map.on('load', function () {
+      map.addControl(new mapboxgl.NavigationControl());
+
+      // Add a marker for user's location
+      new mapboxgl.Marker().setLngLat([lng, lat]).addTo(map);
+
+      // Fetch nearby restaurants
+      map.addSource('restaurants', {
+          type: 'geojson',
+          data: 'https://api.mapbox.com/geocoding/v5/mapbox.places/restaurant.json?proximity=' + lng + ',' + lat + '&access_token=' + mapboxgl.accessToken
+      });
+
+      map.addLayer({
+          'id': 'restaurants',
+          'type': 'symbol',
+          'source': 'restaurants',
+          'layout': {
+              'icon-image': 'restaurant-15',
+              'icon-allow-overlap': true
+          }
+      });
+  });
 }
 
 function errorLocation() {
-  setupMap([-2.24, 53.48]);
-}
-
-function setupMap(center) {
-  const map = new mapboxgl.Map({
-    container: "map",
-    style: "mapbox://styles/mapbox/streets-v12",
-    center: center,
-    zoom: 15,
-    geolocate: true
-  
-  });
-
-
-
-  // Add geolocate control to the map.
-  map.addControl(
-    new mapboxgl.GeolocateControl({
-      positionOptions: {
-        enableHighAccuracy: true
-      },
-      trackUserLocation: true,
-      showUserHeading: true
-    })
-    
-    
-  );
-  
-  // Add search control to the map.
-  
-  // Add the search control to the map
-  
+  console.error("Unable to retrieve your location");
 }
