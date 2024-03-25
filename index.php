@@ -1,109 +1,141 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>HomePage</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<style type="text/css">
-		.navbar-custom{
-			background: linear-gradient(135deg, #c3a3f1, #6414e9);
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
 		}
 
-		[id^="gabung"]{
-			border: none;
-			box-shadow: 1px black;
+		body {
+			font-family: Arial, sans-serif;
+		}
+
+		.container {
+			background-color: aqua;
+			padding: 0px;
+		}
+
+		#navbar {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin: 0px;
+			background-color:#ad8edc;
+			/* Warna latar belakang navbar */
+			padding: 10px 20px;
 			
+			/* Menambahkan padding pada navbar */
 		}
-		h2,h3,h4{
-			color: white;
-		}
-		.row{
-			margin-top: 0.2em;
-		}
-		[class^="col"]{
-			background: linear-gradient(to bottom, #cc00cc 0%, #6666ff 100%);
-			border: 1px solid rgba(86, 61, 124, 0.2);
-			padding: 0.4em;
 
+		ul {
+			list-style: none;
+			display: flex;
+			align-items: center;
 		}
-		[id^="navigasi"]{
-			background-image: url(imagg/.jpg);
-			border: 1px solid rgba(86, 61, 124, 0.2);
-			padding: 0.3em;
+		ul span {
+			font-size: 24px;
 		}
-		[id^="footer"]{
-			background-image: url(img/bg-footnote.jpg);
-		}
-		[id^="gambar"]{
-			border: solid 5px whitesmoke;
-			box-shadow: 3px;
 
+		li {
+			margin-right: 50px;
+			font-size: 24px;
 		}
-		.img-custom{
-			height:80px;
+
+		img.logo {
+			max-width: 100px;
+			margin-right: 20px;
+		}
+
+		.content {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 20px;
+			align-items: center;
+			background-color: aqua;
+			/* Warna latar belakang konten */
+			padding: 20px;
+			background-image: linear-gradient(to left, #d8c0f4, #d0b5f2, #c8abf1, #c0a0ef, #b796ee);
+			/* Menambahkan padding pada konten */
+		}
+
+		.box {
+			padding: 20px;
+		}
+
+		.box h3 {
+			margin-bottom: 10px;
+		}
+
+		.footer {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			background-color:#ad8edc;
+			padding: 20px;
+		}
+
+		.box h4 {
+			margin-bottom: 10px;
+		}
+
+		.box p {
+			margin-bottom: 5px;
+		}
+
+		button {
+			cursor: pointer;
+			padding: 10px 20px;
+			background-color: aquamarine;
+			border: none;
 		}
 	</style>
 </head>
+
 <body>
-	<div class="container-fluid">
-		<div class="row" id="navigasi">
-			<div class="col-12 col-sm-12 col-md-6 border-0" id="navigasi">
-				 <a href="#" class="navbar-brand"><img src="images/spin_a_meal.png" class="navbar-brand img-custom">Spin A Meal</a>
+	<div class="container">
+
+		<div id="navbar">
+			<ul>
+				<img src="images/spin_a_meal.png" alt="Logo" class="logo">
+				<span>Spin A Meal</span>
+			</ul>
+			<ul>
+				<li><a href="#" class="active">Home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div class="content">
+			<div class="box">
+				<h3>This Website is a random picker for users who want to try something new to eat</h3>
 			</div>
-			<div class="col-12 col-sm-12 col-md-6 border-0" id="navigasi">
-			<nav class="navbar navbar-expand-xl navbar navbar-light ">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link active">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="login.php" class="nav-link">Login</a>
-                    </li>
-                </ul>
-            </div>
-          </nav>
+			<div class="box">
+				<img src="images/undraw_eating_together_re_ux62.svg" alt="Illustration">
 			</div>
 		</div>
-
-		<div class="row">
-			<div class="col-12 border-0">
-		<div class="row no-gutters" id="gabung">
-			<div class="col-12 col-sm-12 col-md-5 justify-content-center mt-5 mb-5 border-0" id="gabung">
-			<H3>This Website is a random picker for user who want to try something new to eat </H3>
+		<div id="footer" class="footer">
+			<div class="box">
+				<h4>Latest News</h4>
+				<p>Spin A Meal</p>
 			</div>
-			<div class="col-12 col-sm-12 col-md-7 justify-content-center border-0" id="gabung">
-			<img src="images\undraw_eating_together_re_ux62.svg" class="img-fluid">
+			<div class="box">
+				<h4>Contact Us</h4>
+				<p>City State: Random City<br> Address: Jl.Terserah anda<br> Email: SpinAmeal@Terserah.com</p>
+			</div>
+			<div class="box">
+				<h4>Send Us A Message</h4>
+				<button type="submit" value="Send_email">Click To Send Us An Email</button>
 			</div>
 		</div>
 	</div>
-		
-	</div>
-
-		<div class="row border-0">
-			<div class="col-12 ">
-		<div class="row no-gutters">
-			<div class="col-12 col-sm-12 col-md-4 border-top-0 border-bottom-0 border-left-0"><H4 class="ml-3">Latest News</H4><br><p class="ml-3">Spin A Meal</p>
-			</div>
-			<div class="col-12 col-sm-12 col-md-4 border-top-0 border-bottom-0 border-left-0"><H4 class="ml-3">Contact Us</H4><p class="ml-3">City State:21e1212<br>
-			Addresss:  Polnes<br>   
-			Email:  rhesa719@gmail.com</p></div>
-			<div class="col-12 col-sm-12 col-md-4 border-top-0 border-bottom-0 border-right-0"><H4 class="ml-3">Send Us A Message</H4><br>
-			<button type="submit" value="Send_email" class="btn btn-dark ml-5">Click To Send Us An Email</button></div>
-			
-		</div>
-	</div>
-</div>
-
-	<script src="js/jquery-3.4.1.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
 </body>
+
 </html>
