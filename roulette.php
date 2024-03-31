@@ -508,7 +508,7 @@ error_reporting(0);
       for (let i of rotationValues) {
         //if the angleValue is between min and max then display it
         if (angleValue >= i.minDegree && angleValue <= i.maxDegree) {
-          finalValue.innerHTML = `<p>Rumah Makan : ${i.value}</p>`;
+          finalValue.innerHTML = `<p>Rumah Makan : ${i.value}</p><a href="rating.php"><button>Rating</button></a>`;
           spinBtn.disabled = false;
           break;
         }
