@@ -314,8 +314,8 @@ include "config.php";
         <div class="stars">
         <label>Restaurant</label><br>
         <label>Beri rating</label><br>
-          <input type="text" name="id_rm" value="" placeholder="id_rm"/><br>
-          <input type="text" name="userid" value="" placeholder="userid"/><br>
+          <input type="number" name="id_rm" value="" placeholder="id_rm"/><br>
+          <input type="number" name="userid" value="" placeholder="userid"/><br>
           <input type="radio" id="star5" name="rating" value="5" />
           <label for="star5" title="5 stars">5</label>
           
@@ -333,9 +333,9 @@ include "config.php";
         </div>
         <br>
         <textarea name="comment" placeholder="comment"></textarea>
-        <input type="submit" name="submit" value="Submit"/>
+        <input type="submit" name="save" value="Submit"/>
         <?php 
-              if(isset($_POST['submit'])){
+              if(isset($_POST['save'])){
                 $rating = $_POST['rating'];
                 $comment = $_POST['comment'];
                 $id_rm = $_POST['id_rm'];
@@ -353,7 +353,6 @@ include "config.php";
                 }else{
                   echo "<script language='JavaScript'>
                   (window.alert('komentar dan rating tidak dapat ditambahkan'))
-                  location.href='roulette.php'
                   </script>";
                 }
               }
