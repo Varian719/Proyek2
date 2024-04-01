@@ -344,7 +344,7 @@ include "config.php";
       if (isset($_GET['id'])) {
         $id = $_GET['id'];
       }
-      $sql = "SELECT *,user.username FROM `ratingcommentview`,user where ratingcommentview.userid = user.userid";
+      $sql = "SELECT * from ratingcommentview1 where id_rm = $id";
       $query = mysqli_query($conn, $sql);
       while ($row = mysqli_fetch_assoc($query)) {
       ?>
