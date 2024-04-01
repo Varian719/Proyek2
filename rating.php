@@ -306,31 +306,58 @@ include "config.php";
 
     <div class="wrapper2">
     <div class="container">
-    <form action="submit_review.php" method="post" id="star-rating" class="review-form">
+    <form action="" method="post" id="star-rating" class="review-form">
   <table>
     <tr>
         
       <td>
         <div class="stars">
         <label>Restaurant</label><br>
+        <label>Beri rating</label><br>
+          <input type="text" name="id_rm" value="" placeholder="id_rm"/><br>
+          <input type="text" name="userid" value="" placeholder="userid"/><br>
           <input type="radio" id="star5" name="rating" value="5" />
-          <label for="star5" title="5 stars"></label>
+          <label for="star5" title="5 stars">5</label>
           
           <input type="radio" id="star4" name="rating" value="4" />
-          <label for="star4" title="4 stars"></label>
+          <label for="star4" title="4 stars">4</label>
           
           <input type="radio" id="star3" name="rating" value="3" />
-          <label for="star3" title="3 stars"></label>
+          <label for="star3" title="3 stars">3</label>
           
           <input type="radio" id="star2" name="rating" value="2" />
-          <label for="star2" title="2 stars"></label>
+          <label for="star2" title="2 stars">2</label>
           
           <input type="radio" id="star1" name="rating" value="1" />
-          <label for="star1" title="1 star"></label>
+          <label for="star1" title="1 star">1</label>
         </div>
         <br>
         <textarea name="comment" placeholder="comment"></textarea>
         <input type="submit" name="submit" value="Submit"/>
+        <?php 
+              if(isset($_POST['submit'])){
+                $rating = $_POST['rating'];
+                $comment = $_POST['comment'];
+                $id_rm = $_POST['id_rm'];
+                $userid= $_POST['userid'];
+                
+                $qry1="INSERT INTO rating (id_rm,userid,Rating) value('$id_rm','$userid','$rating')";
+                $qry2="INSERT INTO komentar (Komentar,id_rm,userid) value('$comment','$id_rm','$userid')";
+                $hasil = mysqli_query($conn,$qry1,$qry2);
+                if($hasil){
+                  echo "<script language='JavaScript'>
+                  (window.alert('Komentar dan rating sudah di Tambahkan'))
+                  location.href='roulette.php'
+                  </script>";
+                
+                }else{
+                  echo "<script language='JavaScript'>
+                  (window.alert('komentar dan rating tidak dapat ditambahkan'))
+                  location.href='roulette.php'
+                  </script>";
+                }
+              }
+              ?>
       </td>
     </tr>
   </table>
