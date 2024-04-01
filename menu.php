@@ -307,6 +307,7 @@ include "config.php";
 
     <div class="wrapper2">
     <div class="container">
+      <h2>Menu</h2>
       <table class="table">
         <thead>
           <tr>
@@ -336,36 +337,33 @@ include "config.php";
   </div>
   
   <div class="wrapper3">
-    <div class="container">
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">id_rm</th>
-            <th scope="col">username</th>
-            <th scope="col">Rating</th>
-            <th scope="col">Komentar</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php
-          if (isset($_GET['id'])) {
-            $id = $_GET['id'];
-          }
-          $sql = "SELECT a.id_rm,c.username,a.Rating,b.Komentar  FROM rating a,komentar b,user c where a.id_rm = $id and b.id_rm = $id and a.userid = c.userid";
-          $query = mysqli_query($conn, $sql);
-          while ($row = mysqli_fetch_assoc($query)) {
-            echo "<tr>
-                    <td>" . $row['id_rm'] . "</td>
-                    <td>" . $row['username'] . "</td>
-                    <td>" . $row['Rating'] . "</td>
-                    <td>" . $row['Komentar'] . "</td>
-                  </tr>";
-          }
-          ?>
-        </tbody>
-      </table>
+  <div class="container">
+    <h2>Reviews</h2>
+    <div class="row">
+      <?php
+      if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+      }
+      $sql = "SELECT *,user.username FROM `ratingcommentview`,user where ratingcommentview.userid = user.userid";
+      $query = mysqli_query($conn, $sql);
+      while ($row = mysqli_fetch_assoc($query)) {
+      ?>
+        <div class="col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Rated by <?php echo $row['username']; ?></h5>
+              <p class="card-text">Rating: <?php echo $row['Rating']; ?></p>
+              <p class="card-text">Comment: <?php echo $row['Komentar']; ?></p>
+            </div>
+          </div>
+        </div>
+      <?php
+      }
+      ?>
     </div>
   </div>
+</div>
+
     
     <!--Container Main end-->
 
