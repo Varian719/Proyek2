@@ -334,29 +334,34 @@ include "config.php";
         <br>
         <textarea name="comment" placeholder="comment"></textarea>
         <input type="submit" name="save" value="Submit"/>
-        <?php 
-              if(isset($_POST['save'])){
-                $rating = $_POST['rating'];
-                $comment = $_POST['comment'];
-                $id_rm = $_POST['id_rm'];
-                $userid= $_POST['userid'];
-                
-                $qry1="INSERT INTO rating (id_rm,userid,Rating) value('$id_rm','$userid','$rating')";
-                $qry2="INSERT INTO komentar (Komentar,id_rm,userid) value('$comment','$id_rm','$userid')";
-                $hasil = mysqli_query($conn,$qry1,$qry2);
-                if($hasil){
-                  echo "<script language='JavaScript'>
-                  (window.alert('Komentar dan rating sudah di Tambahkan'))
-                  location.href='roulette.php'
-                  </script>";
-                
-                }else{
-                  echo "<script language='JavaScript'>
-                  (window.alert('komentar dan rating tidak dapat ditambahkan'))
-                  </script>";
-                }
-              }
-              ?>
+        <?php
+include "config.php";
+
+if(isset($_POST['save'])){
+    $rating = $_POST['rating'];
+    $comment = $_POST['comment'];
+    $id_rm = $_POST['id_rm'];
+    $userid= $_POST['userid'];
+    
+    $qry1 = "INSERT INTO rating (id_rm, userid, Rating) VALUES ('$id_rm', '$userid', '$rating')";
+    $qry2 = "INSERT INTO komentar (Komentar, id_rm, userid) VALUES ('$comment', '$id_rm', '$userid')";
+    
+    $hasil1 = mysqli_query($conn, $qry1);
+    $hasil2 = mysqli_query($conn, $qry2);
+    
+    if($hasil1 && $hasil2){
+        echo "<script language='JavaScript'>
+              (window.alert('Komentar dan rating sudah di Tambahkan'))
+              location.href='roulette.php'
+              </script>";
+    } else{
+        echo "<script language='JavaScript'>
+              (window.alert('komentar dan rating tidak dapat ditambahkan'))
+              </script>";
+    }
+}
+?>
+
       </td>
     </tr>
   </table>

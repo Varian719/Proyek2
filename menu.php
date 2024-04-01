@@ -191,19 +191,7 @@ include "config.php";
       .body-pd {
         padding-left: calc(var(--nav-width) + 188px)
       } }
-      .wrapper2 {
-      width: 40%;
-      max-width: 34.37em;
-      max-height: 90vh;
-      background-color: #ffffff;
-      position: absolute;
-      transform: translate(-50%, -50%);
-      top: 50%;
-      left: 75%;
-      padding: 3em;
-      border-radius: 1em;
-      box-shadow: 0 4em 5em rgba(27, 8, 53, 0.2);
-    }
+     
     * {
       padding: 0;
       margin: 0;
@@ -248,6 +236,19 @@ include "config.php";
     }
 
     .wrapper2 {
+      width: 40%;
+      max-width: 34.37em;
+      max-height: 90vh;
+      background-color: #ffffff;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 30%;
+      padding: 3em;
+      border-radius: 1em;
+      box-shadow: 0 4em 5em rgba(27, 8, 53, 0.2);
+    }
+    .wrapper3 {
       width: 40%;
       max-width: 34.37em;
       max-height: 90vh;
@@ -326,6 +327,38 @@ include "config.php";
                     <td>" . $row['Id_Menu'] . "</td>
                     <td>" . $row['Menu'] . "</td>
                     <td>" . $row['Harga'] . "</td>
+                  </tr>";
+          }
+          ?>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <div class="wrapper3">
+    <div class="container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">id_rm</th>
+            <th scope="col">username</th>
+            <th scope="col">Rating</th>
+            <th scope="col">Komentar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+          if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+          }
+          $sql = "SELECT a.id_rm,c.username,a.Rating,b.Komentar  FROM rating a,komentar b,user c where a.id_rm = $id and b.id_rm = $id and a.userid = c.userid";
+          $query = mysqli_query($conn, $sql);
+          while ($row = mysqli_fetch_assoc($query)) {
+            echo "<tr>
+                    <td>" . $row['id_rm'] . "</td>
+                    <td>" . $row['username'] . "</td>
+                    <td>" . $row['Rating'] . "</td>
+                    <td>" . $row['Komentar'] . "</td>
                   </tr>";
           }
           ?>
