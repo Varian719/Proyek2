@@ -4,11 +4,12 @@ include "config.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  
+
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
 
@@ -190,8 +191,10 @@ include "config.php";
 
       .body-pd {
         padding-left: calc(var(--nav-width) + 188px)
-      } }
-      .wrapper2 {
+      }
+    }
+
+    .wrapper2 {
       width: 40%;
       max-width: 34.37em;
       max-height: 90vh;
@@ -204,6 +207,7 @@ include "config.php";
       border-radius: 1em;
       box-shadow: 0 4em 5em rgba(27, 8, 53, 0.2);
     }
+
     * {
       padding: 0;
       margin: 0;
@@ -248,18 +252,58 @@ include "config.php";
     }
 
     .wrapper2 {
-      width: 40%;
+      width: 25%;
       max-width: 34.37em;
-      max-height: 90vh;
       background-color: #ffffff;
       position: absolute;
       transform: translate(-50%, -50%);
       top: 50%;
-      left: 75%;
-      padding: 3em;
+      left: 50%;
+      padding: 2;
+      /* Ubah padding sesuai kebutuhan */
       border-radius: 1em;
       box-shadow: 0 4em 5em rgba(27, 8, 53, 0.2);
+      text-align: center;
     }
+
+
+
+    .wrapper2 input[type="number"],
+    .wrapper2 textarea,
+    .wrapper2 input[type="submit"] {
+      width: 100%;
+      padding: 0.5em;
+      margin-bottom: 1em;
+      border: 1px solid #ccc;
+      border-radius: 0.5em;
+      box-sizing: border-box;
+    }
+
+    .wrapper2 .stars {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1em;
+    }
+
+    .wrapper2 .stars input[type="radio"] {
+      display: none;
+    }
+
+    .wrapper2 .stars label {
+      font-size: 2rem;
+      color: #aaa;
+      cursor: pointer;
+      margin-right: 0.5em;
+    }
+
+    .wrapper2 .stars label:before {
+      content: "\2605";
+    }
+
+    .wrapper2 .stars input[type="radio"]:checked~label {
+      color: #ffcc00;
+    }
+
 
 
     .container {
@@ -267,114 +311,174 @@ include "config.php";
       width: 100%;
       height: 100%;
     }
-  
+
+    .stars {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+    }
+
+    .stars input[type="radio"] {
+      display: none;
+    }
+
+    .stars label {
+      font-size: 0;
+      /* Sembunyikan teks dalam label */
+      cursor: pointer;
+    }
+
+    .stars label:before {
+      content: "\2605";
+      /* Tambahkan karakter bintang */
+      font-size: 2rem;
+      /* Ukuran bintang */
+      color: #aaa;
+      /* Warna bintang tidak dipilih */
+      cursor: pointer;
+    }
+
+    .stars input[type="radio"]:checked~label:before {
+      color: #ffcc00;
+      /* Warna bintang yang dipilih */
+    }
+
+    /* Menetapkan teks angka pada bintang */
+    #star1:before {
+      content: "1";
+    }
+
+    #star2:before {
+      content: "2";
+    }
+
+    #star3:before {
+      content: "3";
+    }
+
+    #star4:before {
+      content: "4";
+    }
+
+    #star5:before {
+      content: "5";
+    }
+  </style>
 
   </style>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
     type="text/css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" type="text/css">
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+    type="text/css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" type="text/css">
 
   <script src="js/script_map.js" defer></script>
 </head>
+
 <body>
-<header class="header" id="header">
-        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i></div>
-        <div class="navbar-header">
-        <a class="navbar-brand ml-0" href="#">Spin A Meal</a>
-      
-        </div>
-        <div class="header_img align-left"> <img src="images/spin_a_meal.png" alt=""> </div>
-    </header>
-    <div class="l-navbar sidebar-custom" id="nav-bar">
-        <nav class="nav">
-            <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">BBBootstrap</span> </a>
-                <div class="nav_list">
-                <a href="dashboard.php" class="nav_link "> <i class='bx bx-map nav_icon'></i> <span class="nav_name">Dashboard</span> </a>
-                <a href="roulette.php" class="nav_link"> <i class='bx bx-circle nav_icon'></i> <span class="nav_name">Users</span> </a>
-                <a href="#" class="nav_link active"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Messages</span> </a>
-                <a href="#" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Bookmark</span> </a>
-                <a href="#" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Files</span> </a>
-                <a href="#" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Stats</span> </a> 
-                </div>
-            </div> <a href="index.php" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
-        </nav>
+  <header class="header" id="header">
+    <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i></div>
+    <div class="navbar-header">
+      <a class="navbar-brand ml-0" href="#">Spin A Meal</a>
+
     </div>
-    <!--Container Main start-->
-
-    <div class="wrapper2">
-    <div class="container">
-    <form action="" method="post" id="star-rating" class="review-form">
-  <table>
-    <tr>
-        
-      <td>
-        <div class="stars">
-        <label>Restaurant</label><br>
-        <label>Beri rating</label><br>
-          <input type="number" name="id_rm" value="" placeholder="id_rm"/><br>
-          <input type="number" name="userid" value="" placeholder="userid"/><br>
-          <input type="radio" id="star5" name="rating" value="5" />
-          <label for="star5" title="5 stars">5</label>
-          
-          <input type="radio" id="star4" name="rating" value="4" />
-          <label for="star4" title="4 stars">4</label>
-          
-          <input type="radio" id="star3" name="rating" value="3" />
-          <label for="star3" title="3 stars">3</label>
-          
-          <input type="radio" id="star2" name="rating" value="2" />
-          <label for="star2" title="2 stars">2</label>
-          
-          <input type="radio" id="star1" name="rating" value="1" />
-          <label for="star1" title="1 star">1</label>
+    <div class="header_img align-left"> <img src="images/spin_a_meal.png" alt=""> </div>
+  </header>
+  <div class="l-navbar sidebar-custom" id="nav-bar">
+    <nav class="nav">
+      <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span
+            class="nav_logo-name">BBBootstrap</span> </a>
+        <div class="nav_list">
+          <a href="dashboard.php" class="nav_link "> <i class='bx bx-map nav_icon'></i> <span
+              class="nav_name">Dashboard</span> </a>
+          <a href="roulette.php" class="nav_link"> <i class='bx bx-circle nav_icon'></i> <span
+              class="nav_name">Users</span> </a>
+          <a href="#" class="nav_link active"> <i class='bx bx-message-square-detail nav_icon'></i> <span
+              class="nav_name">Messages</span> </a>
+          <a href="#" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Bookmark</span>
+          </a>
+          <a href="#" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Files</span> </a>
+          <a href="#" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span
+              class="nav_name">Stats</span> </a>
         </div>
-        <br>
-        <textarea name="comment" placeholder="comment"></textarea>
-        <input type="submit" name="save" value="Submit"/>
-        <?php
-include "config.php";
+      </div> <a href="index.php" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span
+          class="nav_name">SignOut</span> </a>
+    </nav>
+  </div>
+  <!--Container Main start-->
 
-if(isset($_POST['save'])){
-    $rating = $_POST['rating'];
-    $comment = $_POST['comment'];
-    $id_rm = $_POST['id_rm'];
-    $userid= $_POST['userid'];
-    
-    $qry1 = "INSERT INTO rating (id_rm, userid, Rating) VALUES ('$id_rm', '$userid', '$rating')";
-    $qry2 = "INSERT INTO komentar (Komentar, id_rm, userid) VALUES ('$comment', '$id_rm', '$userid')";
-    
-    $hasil1 = mysqli_query($conn, $qry1);
-    $hasil2 = mysqli_query($conn, $qry2);
-    
-    if($hasil1 && $hasil2){
-        echo "<script language='JavaScript'>
+  <div class="wrapper2">
+    <div class="container">
+      <form action="" method="post" id="star-rating" class="review-form">
+        <table>
+          <tr>
+            <td>
+              <label for="id_rm">Restaurant</label><br>
+              <label for="rating">Beri rating</label><br>
+              <input type="number" name="id_rm" id="id_rm" value="" placeholder="id_rm" /><br>
+              <input type="number" name="userid" id="userid" value="" placeholder="userid" /><br>
+              <div class="stars">
+
+                <input type="radio" id="star5" name="rating" value="5" />
+                <label for="star5">5</label>
+
+                <input type="radio" id="star4" name="rating" value="4" />
+                <label for="star4">4</label>
+
+                <input type="radio" id="star3" name="rating" value="3" />
+                <label for="star3">3</label>
+
+                <input type="radio" id="star2" name="rating" value="2" />
+                <label for="star2">2</label>
+
+                <input type="radio" id="star1" name="rating" value="1" />
+                <label for="star1">1</label>
+              </div>
+
+              <br>
+              <textarea name="comment" placeholder="comment"></textarea>
+              <input type="submit" name="save" value="Submit" />
+              <?php
+              include "config.php";
+
+              if (isset($_POST['save'])) {
+                $rating = $_POST['rating'];
+                $comment = $_POST['comment'];
+                $id_rm = $_POST['id_rm'];
+                $userid = $_POST['userid'];
+
+                $qry1 = "INSERT INTO rating (id_rm, userid, Rating) VALUES ('$id_rm', '$userid', '$rating')";
+                $qry2 = "INSERT INTO komentar (Komentar, id_rm, userid) VALUES ('$comment', '$id_rm', '$userid')";
+
+                $hasil1 = mysqli_query($conn, $qry1);
+                $hasil2 = mysqli_query($conn, $qry2);
+
+                if ($hasil1 && $hasil2) {
+                  echo "<script language='JavaScript'>
               (window.alert('Komentar dan rating sudah di Tambahkan'))
               location.href='roulette.php'
               </script>";
-    } else{
-        echo "<script language='JavaScript'>
+                } else {
+                  echo "<script language='JavaScript'>
               (window.alert('komentar dan rating tidak dapat ditambahkan'))
               </script>";
-    }
-}
-?>
-
-      </td>
-    </tr>
-  </table>
-</form>
-
-
+                }
+              }
+              ?>
+            </td>
+          </tr>
+        </table>
+      </form>
     </div>
   </div>
-    
-    <!--Container Main end-->
 
-    <script src="js/dashboard.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!--Container Main end-->
+
+  <script src="js/dashboard.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
+
 </html>

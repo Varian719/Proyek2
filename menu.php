@@ -4,11 +4,12 @@ include "config.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  
+
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
 
@@ -190,8 +191,9 @@ include "config.php";
 
       .body-pd {
         padding-left: calc(var(--nav-width) + 188px)
-      } }
-     
+      }
+    }
+
     * {
       padding: 0;
       margin: 0;
@@ -248,6 +250,7 @@ include "config.php";
       border-radius: 1em;
       box-shadow: 0 4em 5em rgba(27, 8, 53, 0.2);
     }
+
     .wrapper3 {
       width: 40%;
       max-width: 34.37em;
@@ -268,44 +271,92 @@ include "config.php";
       width: 100%;
       height: 100%;
     }
+    /* Chat bubble styles */
+        .chat-container {
+            max-height: 300px; /* Adjust the max-height as needed */
+            overflow-y: auto;
+        }
 
+        .chat-bubble {
+            display: flex;
+            margin-bottom: 20px;
+        }
 
+        .chat-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #ccc; /* You can add background image here for profile pictures */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .avatar-initials {
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .chat-message {
+            flex: 1;
+            margin-left: 10px;
+            background-color: #f3f4f6;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .chat-user {
+            font-weight: bold;
+        }
+
+        .chat-text {
+            margin: 0;
+        }
   </style>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
     type="text/css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" type="text/css">
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+    type="text/css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" type="text/css">
 
   <script src="js/script_map.js" defer></script>
 </head>
-<body>
-<header class="header" id="header">
-        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i></div>
-        <div class="navbar-header">
-        <a class="navbar-brand ml-0" href="#">Spin A Meal</a>
-      
-        </div>
-        <div class="header_img align-left"> <img src="images/spin_a_meal.png" alt=""> </div>
-    </header>
-    <div class="l-navbar sidebar-custom" id="nav-bar">
-        <nav class="nav">
-            <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">BBBootstrap</span> </a>
-                <div class="nav_list">
-                <a href="dashboard.php" class="nav_link "> <i class='bx bx-map nav_icon'></i> <span class="nav_name">Dashboard</span> </a>
-                <a href="roulette.php" class="nav_link"> <i class='bx bx-circle nav_icon'></i> <span class="nav_name">Users</span> </a>
-                <a href="#" class="nav_link active"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Messages</span> </a>
-                <a href="#" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Bookmark</span> </a>
-                <a href="#" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Files</span> </a>
-                <a href="#" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Stats</span> </a> 
-                </div>
-            </div> <a href="index.php" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
-        </nav>
-    </div>
-    <!--Container Main start-->
 
-    <div class="wrapper2">
+<body>
+  <header class="header" id="header">
+    <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i></div>
+    <div class="navbar-header">
+      <a class="navbar-brand ml-0" href="#">Spin A Meal</a>
+
+    </div>
+    <div class="header_img align-left"> <img src="images/spin_a_meal.png" alt=""> </div>
+  </header>
+  <div class="l-navbar sidebar-custom" id="nav-bar">
+    <nav class="nav">
+      <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span
+            class="nav_logo-name">BBBootstrap</span> </a>
+        <div class="nav_list">
+          <a href="dashboard.php" class="nav_link "> <i class='bx bx-map nav_icon'></i> <span
+              class="nav_name">Dashboard</span> </a>
+          <a href="roulette.php" class="nav_link"> <i class='bx bx-circle nav_icon'></i> <span
+              class="nav_name">Users</span> </a>
+          <a href="#" class="nav_link active"> <i class='bx bx-message-square-detail nav_icon'></i> <span
+              class="nav_name">Messages</span> </a>
+          <a href="#" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Bookmark</span>
+          </a>
+          <a href="#" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Files</span> </a>
+          <a href="#" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span
+              class="nav_name">Stats</span> </a>
+        </div>
+      </div> <a href="index.php" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span
+          class="nav_name">SignOut</span> </a>
+    </nav>
+  </div>
+  <!--Container Main start-->
+
+  <div class="wrapper2">
     <div class="container">
       <h2>Menu</h2>
       <table class="table">
@@ -335,40 +386,51 @@ include "config.php";
       </table>
     </div>
   </div>
-  
+
   <div class="wrapper3">
-  <div class="container">
-    <h2>Reviews</h2>
-    <div class="row">
-      <?php
-      if (isset($_GET['id'])) {
-        $id = $_GET['id'];
-      }
-      $sql = "SELECT * from ratingcommentview1 where id_rm = $id";
-      $query = mysqli_query($conn, $sql);
-      while ($row = mysqli_fetch_assoc($query)) {
-      ?>
-        <div class="col-md-6 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">Rated by <?php echo $row['username']; ?></h5>
-              <p class="card-text">Rating: <?php echo $row['Rating']; ?></p>
-              <p class="card-text">Comment: <?php echo $row['Komentar']; ?></p>
+
+    <div class="container">
+      <h2>Reviews</h2>
+      <div class="chat-container">
+        <?php
+        if (isset($_GET['id'])) {
+          $id = $_GET['id'];
+        }
+        $sql = "SELECT *,user.username FROM `ratingcommentview`,user where ratingcommentview.userid = user.userid";
+        $query = mysqli_query($conn, $sql);
+        while ($row = mysqli_fetch_assoc($query)) {
+          ?>
+          <div class="chat-bubble">
+            <div class="chat-avatar">
+              <span class="avatar-initials">
+                <?php echo substr($row['username'], 0, 2); ?>
+              </span>
+            </div>
+            <div class="chat-message">
+              <p class="chat-user">
+                <?php echo $row['username']; ?>
+              </p>
+              <p class="chat-text">
+                <?php echo $row['Rating']; ?>
+              </p>
+              <p class="chat-text">
+                <?php echo $row['Komentar']; ?>
+              </p>
             </div>
           </div>
-        </div>
-      <?php
-      }
-      ?>
+          <?php
+        }
+        ?>
+      </div>
     </div>
   </div>
-</div>
 
-    
-    <!--Container Main end-->
 
-    <script src="js/dashboard.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!--Container Main end-->
+
+  <script src="js/dashboard.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
+
 </html>
