@@ -27,11 +27,11 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt" data-tilt>
-					<img src="images/img-01.png" alt="IMG">
+					<img src="images/spin_a_meal.png" alt="IMG">
 				</div>
 				<form  action="proses_login.php" class="login100-form validate-form" method="POST">
 					<span class="login100-form-title">
-					<img src="images/spin_a_meal.png" height="200px">
+					<h1>SPIN A MEAL</h1>
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">

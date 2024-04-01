@@ -108,8 +108,6 @@
 				<span>Spin A Meal</span>
 			</ul>
 			<ul>
-				<li><a href="#" class="active">Home</a></li>
-				<li><a href="#">About</a></li>
 				<li><a href="login.php">Login</a></li>
 			</ul>
 		</div>
