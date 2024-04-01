@@ -252,7 +252,7 @@ include "config.php";
     }
 
     .wrapper2 {
-      width: 25%;
+      width: 27%;
       max-width: 34.37em;
       background-color: #ffffff;
       position: absolute;
@@ -378,14 +378,6 @@ include "config.php";
 </head>
 
 <body>
-  <header class="header" id="header">
-    <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i></div>
-    <div class="navbar-header">
-      <a class="navbar-brand ml-0" href="#">Spin A Meal</a>
-
-    </div>
-    <div class="header_img align-left"> <img src="images/spin_a_meal.png" alt=""> </div>
-  </header>
   <div class="l-navbar sidebar-custom" id="nav-bar">
     <nav class="nav">
       <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span
