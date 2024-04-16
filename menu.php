@@ -351,25 +351,36 @@ include "config.php";
 
   <div class="wrapper2">
     <div class="container">
+
+      <?php
+      if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+      }
+      $sql1 = "SELECT * FROM rumahmakan where id_rm = $id";
+      $query1 = mysqli_query($conn, $sql1);
+          while ($row = mysqli_fetch_assoc($query1)) {
+            echo "<tr>
+                    <td><h2>" . $row['nama_rumahmakan'] . "</h2></td>
+                    <td><h5>Alamat:" . $row['Alamat'] . "</h5></td>
+                    <td><h5>Telp:" . $row['no_telp'] . "</h5></td>
+                  </tr>";
+          }
+        ?>
+        <br>
       <h2>Menu</h2>
       <table class="table">
         <thead>
           <tr>
-            <th scope="col">#</th>
             <th scope="col">Food</th>
             <th scope="col">Harga</th>
           </tr>
         </thead>
         <tbody>
           <?php
-          if (isset($_GET['id'])) {
-            $id = $_GET['id'];
-          }
-          $sql = "SELECT * FROM menu where id_rm = $id";
-          $query = mysqli_query($conn, $sql);
-          while ($row = mysqli_fetch_assoc($query)) {
+          $sql2 = "SELECT * FROM menu where id_rm = $id";
+          $query2 = mysqli_query($conn, $sql2);
+          while ($row = mysqli_fetch_assoc($query2)) {
             echo "<tr>
-                    <td>" . $row['Id_Menu'] . "</td>
                     <td>" . $row['Menu'] . "</td>
                     <td>" . $row['Harga'] . "</td>
                   </tr>";
@@ -378,6 +389,7 @@ include "config.php";
         </tbody>
       </table>
     </div>
+    <button><a href="rating.php?id=">Rating</a></button>
   </div>
 
   <div class="wrapper3">
