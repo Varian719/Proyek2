@@ -345,13 +345,11 @@ if(isset($_POST['save'])){
     $id_rm = $_POST['id_rm'];
     $userid= $_POST['userid'];
     
-    $qry1 = "INSERT INTO rating (id_rm, userid, Rating) VALUES ('$id_rm', '$userid', '$rating')";
-    $qry2 = "INSERT INTO komentar (Komentar, id_rm, userid) VALUES ('$comment', '$id_rm', '$userid')";
-    
+    $qry1 = "INSERT INTO rating (id_rm, userid, Rating, Komentar) VALUES ('$id_rm', '$userid', '$rating','$comment')";
+
     $hasil1 = mysqli_query($conn, $qry1);
-    $hasil2 = mysqli_query($conn, $qry2);
     
-    if($hasil1 && $hasil2){
+    if($hasil1){
         echo "<script language='JavaScript'>
               (window.alert('Komentar dan rating sudah di Tambahkan'))
               location.href='roulette.php'
