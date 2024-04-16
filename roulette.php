@@ -1,6 +1,9 @@
 <?php
 include 'config.php';
 error_reporting(0);
+session_start();
+$username = $_SESSION['username'];
+$password = $_SESSION['password'];
 ?>
 <html lang="en">
 
@@ -505,15 +508,24 @@ error_reporting(0);
     });
     //display value based on the randomAngle
     const valueGenerator = (angleValue) => {
-      for (let i of rotationValues) {
-        //if the angleValue is between min and max then display it
-        if (angleValue >= i.minDegree && angleValue <= i.maxDegree) {
-          finalValue.innerHTML = `<p>Rumah Makan : ${i.value}</p><a href="rating.php"><button>Rating</button></a>`;
-          spinBtn.disabled = false;
-          break;
-        }
-      }
-    };
+  for (let i of rotationValues) {
+    // Check if the angleValue is within the range
+    if (angleValue >= i.minDegree && angleValue <= i.maxDegree) {
+      // Construct the URL based on the value from rotationValues
+      let url = `menu.php?id=${i.value}`;
+      
+      // Navigate to the constructed URL
+      window.location.href = url;
+      
+      // Enable the spin button if necessary
+      spinBtn.disabled = false;
+      
+      // Exit the loop since we've found the correct range
+      break;
+    }
+  }
+};
+
 
     //Spinner count
     let count = 0;

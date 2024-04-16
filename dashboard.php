@@ -1,4 +1,19 @@
 <!DOCTYPE html>
+<?php
+error_reporting(0);
+session_start();
+$username = $_SESSION['username'];
+$password = $_SESSION['password'];
+if($username=="" or $password=="")
+{ ?>
+	<script>
+        alert("username dan password anda tidak ditemukan!");
+        window.location.assign("login.php");
+    </script>
+    <?php
+}else{
+
+?>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -78,7 +93,7 @@
                 <a href="#" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Files</span> </a>
                 <a href="#" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Stats</span> </a> 
                 </div>
-            </div> <a href="index.php" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
+            </div> <a href="logout.php" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
         </nav>
     </div>
     <!--Container Main start-->
@@ -95,3 +110,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 </html>
+<?php
+}
+?>

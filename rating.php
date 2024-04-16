@@ -1,4 +1,7 @@
 <?php
+session_start();
+$username = $_SESSION['username'];
+$password = $_SESSION['password'];
 include "config.php";
 if (isset($_GET['id'])) {
   $id = $_GET['id'];
@@ -317,7 +320,6 @@ if (isset($_GET['id'])) {
         <label>Restaurant</label><br>
         <label>Beri rating</label><br>
           <input type="number" name="id_rm" value="" placeholder="id_rm"/><br>
-          <input type="number" name="userid" value="" placeholder="userid"/><br>
           <input type="radio" id="star5" name="rating" value="5" />
           <label for="star5" title="5 stars">5</label>
           
@@ -343,9 +345,8 @@ if(isset($_POST['save'])){
     $rating = $_POST['rating'];
     $comment = $_POST['comment'];
     $id_rm = $_POST['id_rm'];
-    $userid= $_POST['userid'];
     
-    $qry1 = "INSERT INTO rating (id_rm, userid, Rating, Komentar) VALUES ('$id_rm', '$userid', '$rating','$comment')";
+    $qry1 = "INSERT INTO rating (id_rm, username, Rating, Komentar) VALUES ('$id_rm', '$username', '$rating','$comment')";
 
     $hasil1 = mysqli_query($conn, $qry1);
     
