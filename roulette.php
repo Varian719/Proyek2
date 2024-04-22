@@ -4,6 +4,12 @@ error_reporting(0);
 session_start();
 $username = $_SESSION['username'];
 $password = $_SESSION['password'];
+
+// Fetch count of rows from the database
+$sql = "SELECT COUNT(*) as total FROM rumahmakan";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($result);
+$jml_rm = $row['total']; // Total number of rows (restaurants) in the database
 ?>
 <html lang="en">
 
@@ -445,22 +451,50 @@ $password = $_SESSION['password'];
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.1.0/chartjs-plugin-datalabels.min.js"></script>
   <!-- Script -->
+ 
   <script>
+    const jml_rm = <?php echo $jml_rm; ?>; // Assuming $jml_rm is a PHP variable containing the array length
     const wheel = document.getElementById("wheel");
     const spinBtn = document.getElementById("spin-btn");
     const finalValue = document.getElementById("final-value");
-    //Object that stores values of minimum and maximum angle for a value
-    const rotationValues = [
-      { minDegree: 0, maxDegree: 30, value: 2 },
-      { minDegree: 31, maxDegree: 90, value: 1 },
-      { minDegree: 91, maxDegree: 150, value: 6 },
-      { minDegree: 151, maxDegree: 210, value: 5 },
-      { minDegree: 211, maxDegree: 270, value: 4 },
-      { minDegree: 271, maxDegree: 330, value: 3 },
-      { minDegree: 331, maxDegree: 360, value: 2 },
-    ];
+    // Object that stores values of minimum and maximum angle for a value
+    const rotationValues = [];
+
+    // Calculate the degree increment per sector
+    const degreeIncrement = 360 / jml_rm;
+
+    // Loop through each sector (restaurant)
+    for (let j = 0; j <= jml_rm; j++) {
+        // Calculate the minimum and maximum degree for the current sector
+        const minDegree = (j * degreeIncrement) + 1;
+        const maxDegree = minDegree + (degreeIncrement);
+
+        // Create an object representing the current sector's rotation range and value
+        const sector = {
+            minDegree: minDegree,
+            maxDegree: maxDegree,
+            value: j + 1 // Value can be adjusted as needed (e.g., starting from 1)
+        };
+
+        // Push the sector object into the rotationValues array
+        rotationValues.push(sector);
+    }
+
+    // Output the generated rotationValues array to the console
+    console.log(rotationValues);
+    
+
     //Size of each piece
-    const data = [16, 16, 16, 16, 16, 16];
+    const data = [];
+    for (let i = 0; i < jml_rm; i++) {
+      const value = 100 / jml_rm; // Calculate the value for each element
+      data.push(value); // Push the calculated value into the array
+    }
+
+    console.log(data);
+
+    
+
     //background color for each piece
     var pieColors = [
       "#8b35bc",
@@ -471,6 +505,11 @@ $password = $_SESSION['password'];
       "#b163da",
     ];
     //Create chart
+    const labels = [];
+    for (let k = jml_rm ; k > 0 ; k--){
+      labels.push(k.toString());
+    }
+    console.log(labels)
     let myChart = new Chart(wheel, {
       //Plugin for displaying text on pie chart
       plugins: [ChartDataLabels],
@@ -478,7 +517,7 @@ $password = $_SESSION['password'];
       type: "pie",
       data: {
         //Labels(values which are to be displayed on chart)
-        labels: [1, 2, 3, 4, 5, 6],
+        labels: labels,
         //Settings for dataset/pie
         datasets: [
           {
@@ -525,6 +564,8 @@ $password = $_SESSION['password'];
     }
   }
 };
+
+
 
 
     //Spinner count

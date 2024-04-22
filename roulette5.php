@@ -464,6 +464,7 @@ error_reporting(0);
       "#8b35bc",
       "#b163da",
       "#8b35bc",
+      "#b163da",
     ];
     //Create chart
     let myChart = new Chart(wheel, {

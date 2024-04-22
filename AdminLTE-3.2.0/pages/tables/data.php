@@ -270,8 +270,8 @@
                     <td>" . $row['username'] . "</td>
                     <td>" . $row['password'] . "</td>
                     <td>
-                        <a href='update.php?id=" . $row['userid'] . "'>Edit</a>
-                        <a href='delete.php?id=" . $row['userid'] . "'>Delete</a>
+                        <a href='update.php?id=" . $row['username'] . "'>Edit</a>
+                        <a href='delete.php?id=" . $row['username'] . "'>Delete</a>
                     </td>
                   </tr>";
                 }
