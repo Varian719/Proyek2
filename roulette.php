@@ -252,8 +252,8 @@ $jml_rm = $row['total']; // Total number of rows (restaurants) in the database
     }
 
     .wrapper2 {
-      width: 40%;
-      max-width: 34.37em;
+      width: 50%;
+      max-width: 35em;
       max-height: 90vh;
       background-color: #ffffff;
       position: absolute;
@@ -380,7 +380,7 @@ $jml_rm = $row['total']; // Total number of rows (restaurants) in the database
   </div>
 
   <div class="wrapper2">
-    <div class="container">
+    <div class="container" style="max-height: 480px; max-width:1000px; overflow-y: auto;">
       <table class="table">
         <thead>
           <tr>

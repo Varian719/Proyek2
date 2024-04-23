@@ -1,6 +1,8 @@
 <?php
 include "config.php";
-
+if (isset($_GET['id'])) {
+  $id = $_GET['id'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -353,9 +355,6 @@ include "config.php";
     <div class="container">
 
       <?php
-      if (isset($_GET['id'])) {
-        $id = $_GET['id'];
-      }
       $sql1 = "SELECT * FROM rumahmakan where id_rm = $id";
       $query1 = mysqli_query($conn, $sql1);
           while ($row = mysqli_fetch_assoc($query1)) {
@@ -389,7 +388,8 @@ include "config.php";
         </tbody>
       </table>
     </div>
-    <button><a href="rating.php?id=">Rating</a></button>
+    <a href="rating.php?id=<?php echo $id; ?>"><button>Rating</button></a>
+
   </div>
 
   <div class="wrapper3">

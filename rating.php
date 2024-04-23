@@ -319,7 +319,6 @@ if (isset($_GET['id'])) {
         <div class="stars">
         <label>Restaurant</label><br>
         <label>Beri rating</label><br>
-          <input type="number" name="id_rm" value="" placeholder="id_rm"/><br>
           <input type="radio" id="star5" name="rating" value="5" />
           <label for="star5" title="5 stars">5</label>
           
@@ -344,9 +343,8 @@ include "config.php";
 if(isset($_POST['save'])){
     $rating = $_POST['rating'];
     $comment = $_POST['comment'];
-    $id_rm = $_POST['id_rm'];
     
-    $qry1 = "INSERT INTO rating (id_rm, username, Rating, Komentar) VALUES ('$id_rm', '$username', '$rating','$comment')";
+    $qry1 = "INSERT INTO rating (id_rm, username, Rating, Komentar) VALUES ('$id', '$username', '$rating','$comment')";
 
     $hasil1 = mysqli_query($conn, $qry1);
     
