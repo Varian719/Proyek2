@@ -387,6 +387,8 @@ if (isset($_GET['id'])) {
           ?>
         </tbody>
       </table>
+      <a href="menu.php?id=<?php echo $id; ?>"><button>Eat</button></a>
+      <a href="roulette.php"><button>Cancel</button></a>
     </div>
 
 

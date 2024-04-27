@@ -401,7 +401,7 @@ if (isset($_GET['id'])) {
         if (isset($_GET['id'])) {
           $id = $_GET['id'];
         }
-        $sql = "SELECT *,user.username FROM rating,user where rating.username = user.username AND rating.id_rm = $id";
+        $sql = "SELECT * FROM rating where id_rm = $id";
         $query = mysqli_query($conn, $sql);
         while ($row = mysqli_fetch_assoc($query)) {
           ?>

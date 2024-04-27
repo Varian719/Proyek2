@@ -551,7 +551,7 @@ $jml_rm = $row['total']; // Total number of rows (restaurants) in the database
     // Check if the angleValue is within the range
     if (angleValue >= i.minDegree && angleValue <= i.maxDegree) {
       // Construct the URL based on the value from rotationValues
-      let url = `menu.php?id=${i.value}`;
+      let url = `eat.php?id=${i.value}`;
       
       // Navigate to the constructed URL
       window.location.href = url;
