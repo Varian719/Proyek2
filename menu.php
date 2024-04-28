@@ -395,7 +395,18 @@ if (isset($_GET['id'])) {
   <div class="wrapper3">
 
     <div class="container">
-      <h2>Reviews</h2>
+    <h2>Reviews</h2>
+    <?php
+        // Assuming $conn is your database connection
+        $query = "SELECT AVG(Rating) AS avg_rating FROM rating WHERE id_rm = $id";
+        $result = mysqli_query($conn, $query);
+        $row = mysqli_fetch_assoc($result);
+        // Cast the fetched value to integer
+        $summary =  $row['avg_rating'];
+      ?>
+      <h2>Summary Rating: <?php echo $summary; ?> </h2>
+
+
       <div class="chat-container">
         <?php
         if (isset($_GET['id'])) {
