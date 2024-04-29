@@ -383,7 +383,7 @@ if (isset($_GET['id'])) {
         </tbody>
       </table>
     </div>
-    <a href="rating.php?id=<?php echo $id; ?>"><button>Rating</button></a>
+    <a href="rating.php?id=<?php echo $id; ?>"><button class='btn btn-info'>Rating</button></a>
 
   </div>
 
