@@ -344,8 +344,7 @@ $jml_rm = $row['total']; // Total number of rows (restaurants) in the database
 <body>
   <div class="l-navbar" id="nav-bar" style="background-color: #6414e9">
     <nav class="nav">
-      <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span
-            class="nav_logo-name">BBBootstrap</span> </a>
+      <div>
         <div class="nav_list">
           <a href="dashboard.php" class="nav_link"> <i class='bx bx-map nav_icon'></i> <span
               class="nav_name">Dashboard</span> </a>
@@ -355,11 +354,10 @@ $jml_rm = $row['total']; // Total number of rows (restaurants) in the database
               class="nav_name">Messages</span> </a>
           <a href="#" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Bookmark</span>
           </a>
-          <a href="#" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Files</span> </a>
-          <a href="#" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span
-              class="nav_name">Stats</span> </a>
         </div>
-      </div> <a href="#" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span>
+      </div> <a href="#" class="nav_logo"> <img src="images\spin_a_meal.png">
+      </a>
+      <a href="logout.php" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span>
       </a>
     </nav>
   </div>
@@ -399,7 +397,7 @@ $jml_rm = $row['total']; // Total number of rows (restaurants) in the database
                     <td>" . $row['id_rm'] . "</td>
                     <td>" . $row['nama_rumahmakan'] . "</td>
                     <td>" . $row['Alamat'] . "</td>
-                    <td><a href='menu.php?id=". $row['id_rm'] ."' class='btn btn-primary'>Show Menu</a>
+                    <td><a href='menu_view.php?id=". $row['id_rm'] ."' class='btn btn-primary'>Show Menu</a>
                   </tr>";
           }
           ?>

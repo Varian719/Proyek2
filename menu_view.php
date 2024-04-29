@@ -330,14 +330,14 @@ if (isset($_GET['id'])) {
   
   <div class="l-navbar sidebar-custom" id="nav-bar">
     <nav class="nav">
-      <div> <div class="nav_list">
+      <div>  <div class="nav_list">
           <a href="dashboard.php" class="nav_link "> <i class='bx bx-map nav_icon'></i> <span
               class="nav_name">Dashboard</span> </a>
           <a href="roulette.php" class="nav_link"> <i class='bx bx-circle nav_icon'></i> <span
               class="nav_name">Users</span> </a>
-          <a href="#" class="nav_link"> <i class='bx bx-message-square-detail nav_icon'></i> <span
+          <a href="#" class="nav_link active"> <i class='bx bx-message-square-detail nav_icon'></i> <span
               class="nav_name">Messages</span> </a>
-          <a href="#" class="nav_link active"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Bookmark</span>
+          <a href="#" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Bookmark</span>
           </a>
         </div>
       </div> <a href="logout.php" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span
@@ -382,31 +382,52 @@ if (isset($_GET['id'])) {
           ?>
         </tbody>
       </table>
-      <a href="menu.php?id=<?php echo $id; ?>"><button>Eat</button></a>
-      <a href="roulette.php"><button>Cancel</button></a>
     </div>
-
 
   </div>
 
   <div class="wrapper3">
 
     <div class="container">
-      <h2>Map</h2>
+    <h2>Reviews</h2>
+    <?php
+        // Assuming $conn is your database connection
+        $query = "SELECT AVG(Rating) AS avg_rating FROM rating WHERE id_rm = $id";
+        $result = mysqli_query($conn, $query);
+        $row = mysqli_fetch_assoc($result);
+        // Cast the fetched value to integer
+        $summary =  $row['avg_rating'];
+      ?>
+      <h2>Summary Rating: <?php echo $summary; ?> </h2>
+
+
       <div class="chat-container">
-      <?php
+        <?php
         if (isset($_GET['id'])) {
           $id = $_GET['id'];
         }
-        $sql = "SELECT * FROM rumahmakan where id_rm = $id";
+        $sql = "SELECT * FROM rating where id_rm = $id";
         $query = mysqli_query($conn, $sql);
         while ($row = mysqli_fetch_assoc($query)) {
-           $lokasi = $row['lokasi_rm'];
           ?>
-      
-       
-          <div class="chat-bubble">        
-          <iframe src="<?php echo $lokasi?>" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="chat-bubble">
+            <div class="chat-avatar">
+              <span class="avatar-initials">
+                <?php echo substr($row['username'], 0, 2); ?>
+              </span>
+            </div>
+            <div class="chat-message">
+              <p class="chat-user">
+                <?php echo $row['username']; ?>
+              </p>
+              <p class="chat-text">
+                <?php echo $row['Rating']; ?>
+              </p>
+              <p class="chat-text">
+                <?php echo $row['Komentar']; ?>
+              </p>
+            </div>
+          </div>
           <?php
         }
         ?>
