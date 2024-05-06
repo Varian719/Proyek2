@@ -350,7 +350,7 @@ $password = $_SESSION['password'];
   <div class="wrapper3">
 
     <div class="container">
-    <h2>History of user <?php echo $username?></h2>
+    <h2>History Rumahmakan dari user <?php echo $username?></h2>
  
      
 
