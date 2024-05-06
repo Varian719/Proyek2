@@ -90,7 +90,7 @@ if($username=="" or $password=="")
                 <a href="dashboard.php" class="nav_link active"> <i class='bx bx-map nav_icon'></i> <span class="nav_name">Dashboard</span> </a>
                 <a href="roulette.php" class="nav_link"> <i class='bx bx-circle nav_icon'></i> <span class="nav_name">Users</span> </a>
                 <a href="#" class="nav_link"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Messages</span> </a>
-                <a href="#" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Bookmark</span> </a>
+                <a href="User_history.php" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Bookmark</span> </a>
                 </div>
             </div> 
             <a href="logout.php" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
