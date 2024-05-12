@@ -346,7 +346,7 @@ $jml_rm = $row['total']; // Total number of rows (restaurants) in the database
     <nav class="nav">
       <div>
         <div class="nav_list">
-          <a href="dashboard.php" class="nav_link"> <i class='bx bx-map nav_icon'></i> <span
+          <a href="dashboard3.php" class="nav_link"> <i class='bx bx-map nav_icon'></i> <span
               class="nav_name">Dashboard</span> </a>
           <a href="roulette.php" class="nav_link active"> <i class='bx bx-circle nav_icon'></i> <span
               class="nav_name">Users</span> </a>

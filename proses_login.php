@@ -18,7 +18,7 @@ if(mysqli_num_rows($query)==0){
     $_SESSION['username']= $username;
     $_SESSION['password']= $password;
 
-    header("Location:dashboard.php");
+    header("Location:dashboard3.php");
 }
 
 ?>

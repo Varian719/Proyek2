@@ -18,7 +18,7 @@ if (isset($_POST['Username']) && isset($_POST['Password'])):
     if ($result->num_rows > 0){
         // Login successful
         $_SESSION['username'] = $username;
-        header('Location: dashboard.php');
+        header('Location: dashboard3.php');
     }
     else{
         // Login failed

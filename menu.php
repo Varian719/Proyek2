@@ -331,7 +331,7 @@ if (isset($_GET['id'])) {
   <div class="l-navbar sidebar-custom" id="nav-bar">
     <nav class="nav">
       <div>  <div class="nav_list">
-          <a href="dashboard.php" class="nav_link "> <i class='bx bx-map nav_icon'></i> <span
+          <a href="dashboard3.php" class="nav_link "> <i class='bx bx-map nav_icon'></i> <span
               class="nav_name">Dashboard</span> </a>
           <a href="roulette.php" class="nav_link"> <i class='bx bx-circle nav_icon'></i> <span
               class="nav_name">Users</span> </a>

@@ -56,7 +56,7 @@
 						</button>
 					</div>
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn" href="dashboard.php">
+						<button class="login100-form-btn" href="dashboard3.php">
 							Login as Guest
 						</button>
 					</div>
