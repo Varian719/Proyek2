@@ -260,7 +260,7 @@ if (isset($_GET['id'])) {
       position: absolute;
       transform: translate(-50%, -50%);
       top: 50%;
-      left: 75%;
+      left: 55%;
       padding: 3em;
       border-radius: 1em;
       box-shadow: 0 4em 5em rgba(27, 8, 53, 0.2);
