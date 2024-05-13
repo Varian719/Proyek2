@@ -391,31 +391,63 @@ if (isset($_GET['id'])) {
 
 
   </div>
-
   <div class="wrapper3">
 
     <div class="container">
-      <h2>Map</h2>
-      <div class="chat-container">
+    <h2>Reviews</h2>
       <?php
+      // Query untuk menghitung rata-rata rating
+      $query = "SELECT AVG(Rating) AS avg_rating FROM rating WHERE id_rm = $id";
+      $result = mysqli_query($conn, $query);
+      $row = mysqli_fetch_assoc($result);
+      // Mengambil nilai rata-rata rating
+      $summary = number_format($row['avg_rating'], 1); // Batasi ke satu angka desimal
+      
+      // Menampilkan summary rating dengan bintang kuning
+      echo "<h2>Summary Rating: <br> <span style='font-size: 1.2em;'>$summary</span> ";
+      for ($i = 1; $i <= 5; $i++) {
+        if ($i <= round($summary)) {
+          echo "<span style='color: #FFD700; font-size: 1.5em;'>&#9733;</span>"; // Bintang terisi (kuning)
+        } else {
+          echo "<span style='color: #000; font-size: 1.5em;'>&#9733;</span>"; // Bintang kosong
+        }
+      }
+      echo "</h2>";
+      ?>
+      <div class="chat-container">
+        <?php
         if (isset($_GET['id'])) {
           $id = $_GET['id'];
         }
-        $sql = "SELECT * FROM rumahmakan where id_rm = $id";
+        $sql = "SELECT * FROM rating where id_rm = $id";
         $query = mysqli_query($conn, $sql);
         while ($row = mysqli_fetch_assoc($query)) {
-           $lokasi = $row['lokasi_rm'];
           ?>
-      
-       
-          <div class="chat-bubble">        
-          <iframe src="<?php echo $lokasi?>" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="chat-bubble">
+            <div class="chat-avatar">
+              <span class="avatar-initials">
+                <?php echo substr($row['username'], 0, 2); ?>
+              </span>
+            </div>
+            <div class="chat-message">
+              <p class="chat-user">
+                <?php echo $row['username']; ?>
+              </p>
+              <p class="chat-text">
+                <?php echo $row['Rating']; ?>
+              </p>
+              <p class="chat-text">
+                <?php echo $row['Komentar']; ?>
+              </p>
+            </div>
+          </div>
           <?php
         }
         ?>
       </div>
     </div>
   </div>
+
 
 
   <!--Container Main end-->

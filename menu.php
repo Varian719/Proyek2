@@ -389,54 +389,28 @@ if (isset($_GET['id'])) {
 
   <div class="wrapper3">
 
-    <div class="container">
-    <h2>Reviews</h2>
-    <?php
-        // Assuming $conn is your database connection
-        $query = "SELECT AVG(Rating) AS avg_rating FROM rating WHERE id_rm = $id";
-        $result = mysqli_query($conn, $query);
-        $row = mysqli_fetch_assoc($result);
-        // Cast the fetched value to integer
-        $summary =  $row['avg_rating'];
+<div class="container">
+  <h2>Map</h2>
+  <div class="chat-container">
+  <?php
+    if (isset($_GET['id'])) {
+      $id = $_GET['id'];
+    }
+    $sql = "SELECT * FROM rumahmakan where id_rm = $id";
+    $query = mysqli_query($conn, $sql);
+    while ($row = mysqli_fetch_assoc($query)) {
+       $lokasi = $row['lokasi_rm'];
       ?>
-      <h2>Summary Rating: <?php echo $summary; ?> </h2>
-
-
-      <div class="chat-container">
-        <?php
-        if (isset($_GET['id'])) {
-          $id = $_GET['id'];
-        }
-        $sql = "SELECT * FROM rating where id_rm = $id";
-        $query = mysqli_query($conn, $sql);
-        while ($row = mysqli_fetch_assoc($query)) {
-          ?>
-          <div class="chat-bubble">
-            <div class="chat-avatar">
-              <span class="avatar-initials">
-                <?php echo substr($row['username'], 0, 2); ?>
-              </span>
-            </div>
-            <div class="chat-message">
-              <p class="chat-user">
-                <?php echo $row['username']; ?>
-              </p>
-              <p class="chat-text">
-                <?php echo $row['Rating']; ?>
-              </p>
-              <p class="chat-text">
-                <?php echo $row['Komentar']; ?>
-              </p>
-            </div>
-          </div>
-          <?php
-        }
-        ?>
-      </div>
-    </div>
+  
+   
+      <div class="chat-bubble">        
+      <iframe src="<?php echo $lokasi?>" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <?php
+    }
+    ?>
   </div>
-
-
+</div>
+</div>
   <!--Container Main end-->
 
   <script src="js/dashboard.js"></script>

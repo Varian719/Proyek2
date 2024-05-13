@@ -63,7 +63,7 @@
         <a class="navbar-brand ml-0" href="#">Spin A Meal</a>
       
         </div>
-        <div class="header_img align-left"> <img src="images/spin_a_meal.png" alt=""> </div>
+        <div class="header_img align-left"> <a href="profile.php"><img src="images/spin_a_meal.png" alt=""></a> </div>
     </header>
     <div class="l-navbar sidebar-custom" id="nav-bar">
         <nav class="nav">
@@ -135,8 +135,6 @@ async function nearbySearch(userLocation) {
       radius: 500,
     },
     includedPrimaryTypes: ["restaurant"],
-    maxResultCount: 5,
-    rankPreference: SearchNearbyRankPreference.POPULARITY,
     language: "en-US",
     region: "us",
   };

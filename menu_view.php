@@ -390,16 +390,25 @@ if (isset($_GET['id'])) {
 
     <div class="container">
     <h2>Reviews</h2>
-    <?php
-        // Assuming $conn is your database connection
-        $query = "SELECT AVG(Rating) AS avg_rating FROM rating WHERE id_rm = $id";
-        $result = mysqli_query($conn, $query);
-        $row = mysqli_fetch_assoc($result);
-        // Cast the fetched value to integer
-        $summary =  $row['avg_rating'];
+      <?php
+      // Query untuk menghitung rata-rata rating
+      $query = "SELECT AVG(Rating) AS avg_rating FROM rating WHERE id_rm = $id";
+      $result = mysqli_query($conn, $query);
+      $row = mysqli_fetch_assoc($result);
+      // Mengambil nilai rata-rata rating
+      $summary = number_format($row['avg_rating'], 1); // Batasi ke satu angka desimal
+      
+      // Menampilkan summary rating dengan bintang kuning
+      echo "<h2>Summary Rating: <br> <span style='font-size: 1.2em;'>$summary</span> ";
+      for ($i = 1; $i <= 5; $i++) {
+        if ($i <= round($summary)) {
+          echo "<span style='color: #FFD700; font-size: 1.5em;'>&#9733;</span>"; // Bintang terisi (kuning)
+        } else {
+          echo "<span style='color: #000; font-size: 1.5em;'>&#9733;</span>"; // Bintang kosong
+        }
+      }
+      echo "</h2>";
       ?>
-      <h2>Summary Rating: <?php echo $summary; ?> </h2>
-
 
       <div class="chat-container">
         <?php

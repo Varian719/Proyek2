@@ -273,7 +273,36 @@ if (isset($_GET['id'])) {
       height: 100%;
     }
   
+    .stars {
+      position: relative;
+      display: inline-block;
+    }
 
+    .stars input {
+      display: none;
+    }
+
+    .stars label {
+      font-size: 2rem;
+      cursor: pointer;
+      direction: rtl;
+      /* Mengatur arah teks dari kanan ke kiri */
+      display: inline-block;
+    }
+
+    .stars label:before {
+      content: '\2606';
+      /* bintang kosong */
+      margin-right: 0.5rem;
+      /* Mengatur jarak antara bintang */
+    }
+
+    .stars input:checked~label:before {
+      content: '\2605';
+      /* bintang terisi */
+      color: #FFD700;
+      /* kuning */
+    }
   </style>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
     type="text/css">
