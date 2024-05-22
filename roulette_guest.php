@@ -352,7 +352,7 @@ $jml_rm = $row['total']; // Total number of rows (restaurants) in the database
               class="nav_name">Users</span> </a>
         </a>
         </div>
-      </div> <a href="#" class="nav_logo"> <img src="images\spin_a_meal.png">
+      </div> 
       </a>
       <a href="logout.php" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span>
       </a>
