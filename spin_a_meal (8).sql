@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 28, 2024 at 08:01 AM
+-- Generation Time: May 14, 2024 at 12:03 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -72,11 +72,12 @@ CREATE TABLE `menu` (
 --
 
 INSERT INTO `menu` (`Id_Menu`, `Menu`, `Harga`, `Id_rm`) VALUES
-(0, 'Ayam Goreng +Nasi', 22000, 1),
-(3, 'Mie Yamin', 15000, 3),
+(1, 'Ayam Goreng +Nasi', 22000, 1),
+(2, 'Mie Yamin', 15000, 3),
 (4, 'Nasi Pecel Ayam', 14000, 2),
 (5, 'Ayam Geprek+Nasi', 13000, 4),
-(6, 'Ayam Goreng Dan  Nasi', 10000, 5);
+(6, 'Ayam Goreng Dan  Nasi', 10000, 5),
+(7, 'Ayam Geprek dan nasi', 15000, 5);
 
 -- --------------------------------------------------------
 
@@ -98,7 +99,12 @@ CREATE TABLE `rating` (
 INSERT INTO `rating` (`id_rm`, `username`, `Rating`, `Komentar`) VALUES
 (1, 'varian_rhesa', 5, 'good'),
 (2, 'varian_rhesa', 5, 'mantap mereun'),
-(3, 'varian_rhesa', 5, 'gg');
+(2, 'vr711', 4, 'nice'),
+(3, 'varian_rhesa', 5, 'gg'),
+(3, 'vr711', 4, 'good'),
+(4, 'varian_rhesa', 5, 'very good and cheap'),
+(5, 'varian_rhesa', 4, 'lumayan '),
+(5, 'vr711', 5, 'nice');
 
 -- --------------------------------------------------------
 
@@ -119,14 +125,11 @@ CREATE TABLE `rumahmakan` (
 --
 
 INSERT INTO `rumahmakan` (`id_rm`, `nama_rumahmakan`, `Alamat`, `lokasi_rm`, `no_telp`) VALUES
-(1, 'BFC', 'Jl. Sultan Sulaiman No.96, Sambutan, Kec. Sambutan', '-0.508293615161712, 117.18187513108832', '312311'),
-(2, 'Pecel Delicy', 'F48F+R95, Jl. Cipto Mangun Kusumo, Sungai Keledang', '-0.532896557777105, 117.12359911072886', '132'),
+(1, 'BFC', 'Jl. Sultan Sulaiman No.96, Sambutan, Kec. Sambutan', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d249.3537712388159!2d117.18088785822523!3d-0.5098756542117485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df5d5ed62067e75%3A0xea6d328080402313!2sBFC%20Store%20Sambutan!5e0!3m2!1sid!2sid!4v1714399140480!5m2!1sid!2sid', '312311'),
+(2, 'Pecel Delicy', 'F48F+R95, Jl. Cipto Mangun Kusumo, Sungai Keledang', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.6456907316597!2d117.1209207742348!3d-0.5329914994617895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df67e2b6c999e0d%3A0xf2e444b4ef5fe3a9!2sRumah%20Makan%20Pecel%20Delicy!5e0!3m2!1sid!2sid!4v1714399344523!5m2!1sid!2sid', '132'),
 (3, 'Warung Mie Yamin Mas', 'Sengkotek, Jl. Cipto Mangunkusumo, Kota Samarinda,', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d997.4114524170719!2d117.12094006955063!3d-0.532807858919247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df67f0e64068fe9%3A0x2d2a5f716691540b!2sWarung%20Mie%20Yamin%20Mas%20Min!5e0!3m2!1sid!2sid!4v1713839049613!5m2!1sid!2sid', '813454'),
-(4, 'Madhe', 'jl cipto mangunkusumo', '1312313123', '131231231'),
-(5, 'Mimi Chicken', 'jl. Lambung Mangkurat', '1312412412', '0888888'),
-(6, 'rm2', 'jl cipto mangunkusumo', '13245', '0131231231'),
-(7, 'Rm3', 'jl.cipto mangunkusumo', '123123131231', '088888'),
-(8, 'makan padang', 'jalan juanda', '1231231', '91321312');
+(4, 'Madhe', 'jl cipto mangunkusumo', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d419.3598642938243!2d117.12235070001157!3d-0.532707084648233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df67f0072e926ef%3A0xca151461c4394d5b!2sWarung%20Makdhe!5e0!3m2!1sid!2sid!4v1714399435728!5m2!1sid!2sid', '131231231'),
+(5, 'Mimi Chicken', 'jl. Lambung Mangkurat', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.673920372825!2d117.15839717109866!3d-0.48746779841984966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df67f468f5de2e1%3A0x115aeece19e5f033!2sMimi%20Chicken%20Lambung%20Mangkurat!5e0!3m2!1sid!2sid!4v1714999371002!5m2!1sid!2sid', '0888888');
 
 -- --------------------------------------------------------
 
@@ -144,7 +147,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`username`, `password`) VALUES
-('varian_rhesa', '1111');
+('varian_rhesa', '1111'),
+('vr711', '12345');
 
 --
 -- Indexes for dumped tables
@@ -200,6 +204,12 @@ ALTER TABLE `user`
 --
 ALTER TABLE `alamat`
   MODIFY `id_alamat` int(5) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `menu`
+--
+ALTER TABLE `menu`
+  MODIFY `Id_Menu` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `rumahmakan`
