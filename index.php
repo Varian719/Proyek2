@@ -113,7 +113,7 @@
 			</ul>
 			<ul>
 				<li><a href="login.php">Login</a></li>
-				<li><a href="dashboard3.php">Login As Guest</a></li>
+				<li><a href="dashboard_guest.php">Login As Guest</a></li>
 			</ul>
 
 		</div>
